@@ -1,0 +1,46 @@
+.enjoy__wrapper {
+    padding: 39px;
+
+}
+
+.enjoy__content {
+    height: 644px;
+    width: $content-width;
+    background-image: url(/assets/img-hero.jpg);
+    background-size: cover;
+    background-position: right 0px bottom -30px;
+    border-radius: 40px;
+    padding-top: 104px;
+
+}
+
+.enjoy__left {
+    p, h1 {
+        width: 560px;
+        color: $color-light;
+    }
+    span {
+        font-style: italic;
+        color: $color-accent;
+    }
+}
+
+.enjoy__button span {
+    @include font (1.6rem, 150%, 600, normal);
+    color: $color-dark;
+}
+
+.enjoy__left h1 {
+    padding-bottom: 41px;
+
+}
+
+.enjoy__left p {
+    padding-bottom: 40px;
+    font-weight: 400;
+
+}
+
+.enjoy__left {
+    padding-left: 101px;
+}

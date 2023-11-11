@@ -1,0 +1,52 @@
+//Abstacts
+@import "abstracts/constants";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+//Base 
+@import "base/base";
+//Layouts
+@import "layouts/wrapper";
+@import "layouts/header";
+@import "layouts/enjoy";
+@import "layouts/columns";
+@import "layouts/favouriteCoffee";
+
+//Components
+
+@import "components/buttons";
+
+
+// .header__menubtn {
+//     display: flex;
+//     justify-content: space-between;
+// }
+// // //Abstacts
+// @import "abstracts/constans";
+// @import "abstracts/mixins";
+// @import "abstracts/placeholders";
+
+// //Base 
+// @import "base/modal-window";
+// @import "base/fonts";
+// @import "base/base";
+
+// //Layouts
+// @import "layouts/wrapper";
+// @import "layouts/header";
+// @import "layouts/columns";
+// @import "layouts/notOnly";
+// @import "layouts/about";
+// @import "layouts/ourFriends";
+// @import "layouts/help";
+// @import "layouts/addition";
+// @import "layouts/footer";
+
+// //Components
+// @import "components/humburger";
+// @import "components/navigation";
+// @import "components/logo";
+// @import "components/buttons";
+// @import "components/pet";
+// @import "components/item";
+// @import "components/bank-card";
+// @import "components/contacts-block";

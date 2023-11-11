@@ -1,0 +1,241 @@
+.favouritesCoffee span {
+  font-style: italic;
+  color: #B0907A;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0px;
+  color: #403F3D;
+}
+
+body {
+  margin: auto;
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+h1 {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 7.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 104%;
+  color: #E1D4C9;
+}
+
+h2 {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+h4 {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  background: #E1D4C9;
+  padding: 0px 40px 0px 40px;
+}
+
+.header-container {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 22px 0;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navList {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 14px 1px;
+}
+
+.navList li {
+  margin: 0 21px;
+}
+
+.logo {
+  padding-left: 1px;
+}
+
+.header__menubtn {
+  margin-left: 346px;
+}
+
+.header__menubtn a {
+  text-decoration: none;
+  color: #403F3D;
+}
+
+.enjoy__wrapper {
+  padding: 39px;
+}
+
+.enjoy__content {
+  height: 644px;
+  width: 1360px;
+  background-image: url(/assets/img-hero.jpg);
+  background-size: cover;
+  background-position: right 0px bottom -30px;
+  border-radius: 40px;
+  padding-top: 104px;
+}
+
+.enjoy__left p, .enjoy__left h1 {
+  width: 560px;
+  color: #E1D4C9;
+}
+
+.enjoy__left span {
+  font-style: italic;
+  color: #B0907A;
+}
+
+.enjoy__button span {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+}
+
+.enjoy__left h1 {
+  padding-bottom: 41px;
+}
+
+.enjoy__left p {
+  padding-bottom: 40px;
+  font-weight: 400;
+}
+
+.enjoy__left {
+  padding-left: 101px;
+}
+
+.layout-2-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.layout-2-column > * {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.favouritesCoffee {
+  height: 999px;
+}
+
+.favouritesCoffee h2 {
+  text-align: center;
+  padding-top: 62px;
+}
+
+.favouritesCoffee .wrapper {
+  height: 999px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.slide img {
+  padding-top: 40px;
+}
+
+.slide h4 {
+  padding-top: 14px;
+}
+
+.slide p {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #403F3D;
+  padding-top: 16px;
+}
+
+.slide__price {
+  font-family: 'Inter', 'Verdana', sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  padding-top: 14px;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  height: 64px;
+  padding: 20px 78px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: 0px;
+}
+
+.button__colored {
+  background-color: #E1D4C9;
+}
+/*# sourceMappingURL=home.css.map */

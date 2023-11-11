@@ -1,0 +1,38 @@
+.header-container {
+     height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+}
+// .nav {
+    // width: calc(1440px-100px);
+// }
+.header__nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navList {
+    list-style-type:  none;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 1px;
+  
+    // width: 700px; 
+    li {
+        margin: 0 21px;
+    }
+}
+
+.logo {
+    padding-left: 1px;
+}
+
+.header__menubtn {
+    margin-left: 346px;
+    a {
+        text-decoration: none;
+        color: $color-dark;
+    }
+    
+}

@@ -6,80 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="saas/home.css">
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/home.css">
 </head>
 
 <body>
     <header class="header">
         <div class="wrapper">
+            <div class="header-container">
+                <div class="logo">
             <a href="#">
                 <img src="../../assets/logo.png" alt="logo">
             </a>
+        </div>
             <nav class="header__nav">
                 <ul class="navList">
                     <li>Favorite coffee</li>
                     <li>About</li>
                     <li>Mobile app</li>
                     <li>Contact us</li>
-                    <li> <a class="header__menubtn" href="#">
+                    <div class="header__menubtn"> <a  href="#">
                             Menu
-                            <img src="/Coffee-House/assets/coffee-cup.png" alt="coffee-cup">
+                            <img src="/assets/coffee-cup.png" alt="coffee-cup">
                         </a>
-                    </li>
+                    </div>
                 </ul>
             </nav>
-        </div>
+        </div></div>
     </header>
     <main>
         <section class="enjoy">
-            <div class="wrapper">
-                <div class="enjoy__content">
-                    <h1>Enjoy premium coffee at our charming cafe</h1>
+            <div class="wrapper enjoy__wrapper">
+                <div class="enjoy__content layout-2-column">
+                    <div class="enjoy__left">
+                    <h1><span> Enjoy </span>premium coffee at our charming cafe</h1>
                     <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
                         destination for
                         coffee lovers and those seeking a warm and inviting space to
                         enjoy their favorite beverage.</p>
-                    <button class="enjoy__button button button__colored">Menu</button>
+                    <button class="enjoy__button button button__colored"><span>Menu</span></button></div>
+                    <div></div>
                 </div>
             </div>
         </section>
         <section class="favouritesCoffee">
             <div class="wrapper">
                 <div class="favouritesCoffee__content">
-                    <h2>Choose your favorite coffee</h2>
+                    <h2>Choose your <span> favorite </span>coffee</h2>
                     <div class="favouritesCoffee__slider slider">
-                        <div class="slider__leftArrow slider__arrow"></div>
-                        <div class="slider__container1">
-                            <div class="coffee-slide1">
-                                <img src="/assets/coffee-slider-1.png">
+                        <!-- <div class="slider__leftArrow slider__arrow"></div> -->
+                        <div class="slider__container">
+                            <div class="coffee-slide1 slide">
+                                <img src="/assets/coffee-slider-1.png" alt="coffee-slider-1">
                                 <h4>S’mores Frappuccino</h4>
-                                <p>This new drink takes an espresso and mixes it with brown sugar and
-                                     cinnamon before being topped with oat milk.</p>
-                                     <p>$5.50</p>
+                                <p class="slide__description">This new drink takes an espresso and mixes it with brown<br> sugar and
+                                    cinnamon before being topped with oat milk.</p>
+                                <p class="slide__price">$5.50</p>
                             </div>
-                            <!-- <div class="coffee-slide2">
-                                <img src="/assets/coffee-slider-1.png">
+                            <!-- <div class="coffee-slide2 slide">
+                                <img src="/assets/coffee-slider-2.png" alt="coffee-slider-2">
                                 <h4>S’mores Frappuccino</h4>
                                 <p>This new drink takes an espresso and mixes it with brown sugar and
                                      cinnamon before being topped with oat milk.</p>
-                                     <p>$5.50</p>
+                                     <h4>$5.50</h4>
                             </div>
-                            <div class="coffee-slide3">
-                                <img src="/assets/coffee-slider-1.png">
+                            <div class="coffee-slide3 slide">
+                                <img src="/assets/coffee-slider-3.png" alt="coffee-slider-3">
                                 <h4>S’mores Frappuccino</h4>
                                 <p>This new drink takes an espresso and mixes it with brown sugar and
                                      cinnamon before being topped with oat milk.</p>
-                                     <p>$5.50</p>
+                                     <p4>$5.50</p4>
                             </div> -->
                         </div>
-                        <div class="slider__rightArrow slider__arrow"></div>
+                        <!-- <div class="slider__rightArrow slider__arrow"></div> -->
                     </div>
                 </div>
             </div>
         </section>
         <section class="about">
             <div class="wrapper">
-                <h2>Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax, 
+                <h2>Resource is the perfect and cozy place where you can enjoy a variety of hot beverages, relax,
                     catch up with friends,
                     or get some work done.
                 </h2>
@@ -88,29 +94,70 @@
                 <img src="/assets/box (1).png" alt="photo2">
                 <img src="/assets/about-2.png" alt="photo3">
                 <img src="/assets/box (2).png" alt="photo4">
-        </div>
+            </div>
         </section>
         <section class="mobileApp">
             <div class="wrapper">
                 <div class="mobileApp__container">
                     <div class="mobileApp__download">
-                <h2>Download our apps to start ordering</h2>
-                <p>Download the Resource app today and experience the comfort of ordering your favorite
-                     coffee from wherever you are</p>
-                     <div class="mobailApp__buttons">
-                        <button class="button button_bordered">
-                            
-                        </button>
-                        <button class="button button_bordered"></button>
-                     </div>
-
-
-                
-            </div>
+                        <h2>Download our apps to start ordering</h2>
+                        <p>Download the Resource app today and experience the comfort of ordering your favorite
+                            coffee from wherever you are</p>
+                        <div class="mobailApp__buttons">
+                            <button class="button button_bordered">
+                                <div class="button__container">
+                                    <img>
+                                    <div>
+                                        <span>Available on the</span>
+                                        <span>App Store</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="button button_bordered">
+                                <div class="button__container">
+                                    <img>
+                                    <div>
+                                        <span>Available on the</span>
+                                        <span>App Store</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <img src="/assets/mobile-screens.png" alt="mobile-screens">
+                </div>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="wrapper footer-wrapper layout-2-column">
+            <div class="footer__sir">
+                <p>
+                    <span>Sip, Savor, Smile.</span> It’s coffee time!
+                </p>
+                <ul class="footer__contacts layout-3-column">
+                    <li>
+                        <a href="#"><img src="/assets/twitter.svg" alt="twitter"></a>
+                    </li>
+                    <li> <a href="#"><img src="assets/images/social-icons/Google.png" alt="instagram"></a>
+                    </li>
+                    <li> <a href="#"><img src="assets/images/social-icons/Facebook.png" alt="facebook"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="contactUs">
+            <p>Contact us</p>
+        <div class="get-a-quote__grid">
+            <img class="icon icon_location" src="assets/images/icons-form/location.png" alt="location"> <a href="#">Elm
+                St. 14/05 Lost City</a>
+            <img class="icon icon_phone" src="assets/images/icons-form/phone.png" alt="phone"> <a
+                href="tel:+035283318635">03528 331 86 35</a>
+            <img class="icon icon_letter" src="assets/images/icons-form/letter.png" alt="letter"> <a
+                href="mailto:info@singolo.com">info@singolo.com</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
