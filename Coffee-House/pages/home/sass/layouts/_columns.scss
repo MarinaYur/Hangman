@@ -6,12 +6,12 @@
     // }
 }
 
-// .layout-3-column{
-//     @include columns($width:auto);
-//     @include media-tablet {
-//         justify-content: flex-start;
-//     }
-// }
+.layout-3-column{
+    @include columns($width:auto);
+    // @include media-tablet {
+    //     justify-content: flex-start;
+    // }
+}
 
 // .layout-9-column-in-2-rows{
 //     @include columns($width:20%);

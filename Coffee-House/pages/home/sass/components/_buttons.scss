@@ -2,10 +2,6 @@
     display: flex;
     width: 200px;
     height: 64px;
-    padding: 20px 78px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
     border-radius: 100px;
     border: 0px;
 }
@@ -14,3 +10,8 @@
     background-color: $color-light;
 }
 
+.button_bordered {
+    border: 1px solid $color-backgroundFooter;
+    background-color: $color-background;
+    overflow: hidden;
+}

@@ -1,5 +1,5 @@
 .favouritesCoffee {
-    height: 999px;
+    height: 961px;
     h2 {
         text-align: center;
         padding-top: 62px;
@@ -29,14 +29,34 @@
     h4 {
         padding-top: 14px
     }
-    .slide__description {
+}
+
+ .slide__description {
         @include font (1.6rem, 150%, 400, normal);
         color: $color-dark;
         padding-top: 16px;
     }
-}
 
 .slide__price {
     @include font (2.4rem, 125%, 600, normal);
-    padding-top: 14px
+    padding-top: 16px
+}
+
+.indiсator {
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background: $color-indiсator;
+}
+
+.slider__indiсators {
+    width: 144px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 39.5px;
+}
+
+.active {
+    background: $color-backgroundFooter;
 }

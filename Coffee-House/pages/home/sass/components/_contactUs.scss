@@ -1,0 +1,14 @@
+.contactUs {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 17fr;
+    padding-top: 39px;
+   
+    a {
+        color: $color-light;
+        text-align: left;
+        margin: 0;
+        text-decoration: none;
+        padding-bottom: 20px;
+    }
+}

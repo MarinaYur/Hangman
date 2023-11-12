@@ -1,0 +1,55 @@
+.footer-wrapper {
+    padding-bottom: 40px;
+}
+.footer__container {
+    height: 450px;
+    background-color: $color-backgroundFooter;
+    padding: 100px;
+    border-radius: 40px;
+}
+
+.footer__sir {
+    p {
+        @include font (6.0rem, 125%, 600, normal);
+        color: $color-light;
+    }
+
+    img {
+        padding-top: 7px;
+    }
+}
+
+.itscoffee {
+    padding-bottom: 40px;
+}
+
+
+.footer__contacts {
+
+    li {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid $color-light
+    }
+}
+
+.footer__contacts {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.footer__contactUs {
+    padding: 32px 0 0px 50px;
+    p {
+        @include font (2.4rem, 125%, 600, normal);
+        color: $color-light;
+    }
+    a {
+        color: $color-light;
+    }
+}

@@ -1,0 +1,48 @@
+.wrapper__mobileApp {
+    padding-top: 72px;
+    padding-bottom: 94.5px;
+}
+
+.mobileApp__download {
+    padding-top: 172px;
+    span {
+        @extend %spanAccent;
+    }
+}
+
+.mobileApp__left {
+    width: 630px;
+    p {
+        @include font (1.6rem, 150%, 400, normal);
+    }
+    h2 {
+        padding-bottom: 40px;
+    }
+}
+
+.mobileApp__phones {
+    padding: 28px 0px 0 53px;
+}
+    
+.mobailApp__buttons {
+    display: flex;
+    gap: 20px;
+    padding-top: 41px;
+}
+
+.button__container {
+    background-color: $color-background;
+    display: flex;
+    padding: 13px 0px 0px 19px;
+    span {
+        color: $color-dark;
+        @include font (1.0rem, 150%, 400, normal);
+    }
+    p {
+        @include font (1.6rem, 150%, 400, normal);
+    }
+    div {
+        padding: 0px 0px 0 9px;
+
+    }
+}

@@ -1,12 +1,9 @@
 .header-container {
-     height: 60px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     padding: 22px 0;
 }
-// .nav {
-    // width: calc(1440px-100px);
-// }
 .header__nav {
     display: flex;
     justify-content: space-around;
@@ -17,19 +14,19 @@
     display: flex;
     justify-content: space-around;
     padding: 14px 1px;
-  
-    // width: 700px; 
     li {
         margin: 0 21px;
     }
 }
-
 .logo {
     padding-left: 1px;
 }
 
 .header__menubtn {
-    margin-left: 346px;
+    margin: 0 5px 0 342px;
+    align-items: center;
+    padding-top: 11px;
+
     a {
         text-decoration: none;
         color: $color-dark;
