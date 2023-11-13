@@ -17,6 +17,13 @@
     li {
         margin: 0 21px;
     }
+    a {
+        @include font (1.6rem, 150%, 600, normal);
+        color: $color-dark;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0;
+    }
 }
 .logo {
     padding-left: 1px;

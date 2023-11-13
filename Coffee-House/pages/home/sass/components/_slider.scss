@@ -1,0 +1,44 @@
+.slider__arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-light;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid $color-dark;
+    
+}
+
+.slider__leftArrow {
+    background-image: url(/assets/arrow-left.png);
+    margin: 330px 0 0 4.5px;
+}
+
+.slider__rightArrow {
+    background-image: url(/assets/Vectorarrow-right.png);
+    margin: 330px 5px 0 0;
+}
+
+.slider__container {
+    // justify-content: space-between;
+    overflow: hidden;
+    width: 1260px;
+}
+
+.slider {
+    display: flex;
+}
+
+.slide {
+    width: 1152px;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    img {
+        padding-top: 40px;
+    }
+    h4 {
+        padding-top: 14px
+    }
+}
+
