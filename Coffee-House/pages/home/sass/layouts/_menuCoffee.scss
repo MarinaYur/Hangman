@@ -1,0 +1,33 @@
+.menuCoffee__wrapper {
+    padding-left: 39px;
+}
+
+.menuCoffee__title {
+    width: 800px;
+    text-align: center;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 39px
+}
+
+.menuCoffee__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 100px;
+}
+
+.coffeeDescription {
+    @include font (1.6rem, 150%, 400, normal);
+}
+
+.menuCoffee__tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 361px;
+    padding-bottom: 38px;
+    margin: auto;
+}

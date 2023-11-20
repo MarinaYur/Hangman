@@ -6,39 +6,50 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid $color-dark;
-    
+    cursor: pointer;
+    transition: 0.3s linear;
+
+    &:hover {
+        background-color: $color-backgroundFooter;
+
+        svg * {
+            stroke: $color-light;
+            fill: $color-light;
+        }
+    }
+
 }
 
 .slider__leftArrow {
-    background-image: url(/assets/arrow-left.png);
     margin: 330px 0 0 4.5px;
+
 }
 
 .slider__rightArrow {
-    background-image: url(/assets/Vectorarrow-right.png);
     margin: 330px 5px 0 0;
 }
 
 .slider__container {
-    // justify-content: space-between;
     overflow: hidden;
     width: 1260px;
 }
 
 .slider {
     display: flex;
+
 }
 
 .slide {
     width: 1152px;
     height: 100%;
     text-align: center;
-    margin: 0 auto;
+    padding-left: 81px;
+
     img {
         padding-top: 40px;
     }
+
     h4 {
         padding-top: 14px
     }
 }
-

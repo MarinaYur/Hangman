@@ -1,0 +1,42 @@
+.card {
+    width: 310px;
+    height: 506px;
+    border-radius: 40px;
+    border: 1px solid var(--border-light, #C1B6AD);
+
+    .card__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 310px;
+        height: 310px;
+        border-radius: 40px;
+
+    }
+
+    img {
+        width: 340px;
+        height: 340px;
+        transition: all 0.5s;
+
+        &:hover {
+            transform: scale(0.92);
+        }
+    }
+
+}
+
+.coffeeName {
+    padding: 20px 0 0 20px;
+}
+
+.card__description {
+    padding: 12px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-self: stretch;
+    height: 126px;
+}

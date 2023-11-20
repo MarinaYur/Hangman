@@ -1,6 +1,7 @@
 .footer-wrapper {
     padding-bottom: 40px;
 }
+
 .footer__container {
     height: 450px;
     background-color: $color-backgroundFooter;
@@ -23,7 +24,6 @@
     padding-bottom: 40px;
 }
 
-
 .footer__contacts {
 
     li {
@@ -33,7 +33,11 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        border: 1px solid $color-light
+        border: 1px solid $color-light;
+
+        a {
+            padding-top: 7px;
+        }
     }
 }
 
@@ -41,15 +45,64 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 12px;
+
+    svg * {
+        stroke: $color-light;
+    }
+
+    li {
+        transition: 0.5s linear;
+
+        a {
+            cursor: default;
+        }
+    }
+
+    li:hover {
+        background-color: $color-light;
+
+        svg * {
+            stroke: $color-dark;
+        }
+    }
+
 }
 
 .footer__contactUs {
     padding: 32px 0 0px 50px;
+
     p {
         @include font (2.4rem, 125%, 600, normal);
         color: $color-light;
     }
+
     a {
+        position: relative;
+        cursor: default;
         color: $color-light;
+        font-style: normal;
+        width: 187px;
+    }
+
+    span {
+        color: $color-light;
+        font-style: normal;
+    }
+
+    a::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: $color-light;
+        transform: translateX(-50%);
+        transition: 0.6s;
+    }
+
+    a:hover:after {
+        width: 175px;
     }
 }

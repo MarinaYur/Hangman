@@ -1,6 +1,6 @@
 .wrapper__mobileApp {
     padding-top: 72px;
-    padding-bottom: 94.5px;
+    padding-bottom: 92.5px;
 }
 
 .mobileApp__download {
@@ -28,27 +28,4 @@
     display: flex;
     gap: 20px;
     padding-top: 40px;
-}
-
-.button__container {
-    background-color: $color-background;
-    display: flex;
-    padding: 0px 0px 0px 19px;
-    justify-content: center;
-    align-items: center;
-    img {
-        display: block;
-    }
-    span {
-        color: $color-dark;
-        @include font (1.0rem, 150%, 600, normal);
-    }
-    p {
-        @include font (1.6rem, 150%, 600, normal);
-    }
-    div {
-        padding: 0px 0px 0 9px;
-        margin-bottom: 9px;
-
-    }
 }

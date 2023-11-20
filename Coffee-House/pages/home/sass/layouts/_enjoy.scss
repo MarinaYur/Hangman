@@ -1,31 +1,68 @@
 .enjoy__wrapper {
-    padding: 39px;
+    padding: 40px 40px 38px 40px;
 
 }
 
 .enjoy__button {
+    position: relative;
     padding: 20px 78px;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
+
+    a {
+        display: flex;
+        width: 200px;
+        height: 64px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .enjoy__menu {
+        position: absolute;
+        transition: transform 0.6s;
+    }
+
+    .enjoy__svg {
+        padding-left: 59px;
+        opacity: 0;
+    }
+
+    &:hover {
+        .enjoy__svg {
+            display: block;
+            margin-left: 6px;
+            opacity: 100%;
+        }
+
+        .enjoy__menu {
+            display: block;
+            transform: translateX(-12px);
+        }
+    }
+
 }
 
 .enjoy__content {
     height: 644px;
     width: $content-width;
-    background-image: url(/assets/img-hero.jpg);
-    background-size: cover;
-    background-position: right 0px bottom -30px;
+    background-image: url(/assets/container.png);
     border-radius: 40px;
-    padding-top: 104px;
+    padding-top: 102px;
 
 }
 
 .enjoy__left {
-    p, h1 {
+    padding-left: 100px;
+
+    p,
+    h1 {
         width: 560px;
         color: $color-light;
     }
+
     span {
         font-style: italic;
         color: $color-accent;
@@ -45,9 +82,4 @@
 .enjoy__left p {
     padding-bottom: 40px;
     font-weight: 400;
-
-}
-
-.enjoy__left {
-    padding-left: 101px;
 }

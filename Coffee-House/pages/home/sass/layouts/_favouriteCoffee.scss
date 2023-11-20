@@ -13,9 +13,6 @@
     }
 }
 
-
-
-
  .slide__description {
         @include font (1.6rem, 150%, 400, normal);
         color: $color-dark;
@@ -42,6 +39,6 @@
     padding-top: 39.5px;
 }
 
-.active {
+.indiсator_active {
     background: $color-backgroundFooter;
 }
