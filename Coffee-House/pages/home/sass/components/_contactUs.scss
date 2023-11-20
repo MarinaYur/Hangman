@@ -3,21 +3,29 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 17fr;
     padding-top: 39px;
+    span {
+        padding-bottom: 17px;
+    }
 
     a {
         color: $color-light;
         margin: 0;
         text-decoration: none;
-        padding-bottom: 17px;
+        padding-bottom: 8px;
     }
 
     img {
         padding-right: 4px;
     }
-
     :first-child {
+    img {
+        padding-right: 8px;
+    }
+}
+
+:nth-child(2) {
         img {
-            padding-right: 9px;
+            padding-right: 5px;
         }
     }
 }

@@ -735,11 +735,15 @@ h4 {
   padding-top: 39px;
 }
 
+.contactUs span {
+  padding-bottom: 17px;
+}
+
 .contactUs a {
   color: #E1D4C9;
   margin: 0;
   text-decoration: none;
-  padding-bottom: 17px;
+  padding-bottom: 8px;
 }
 
 .contactUs img {
@@ -747,7 +751,11 @@ h4 {
 }
 
 .contactUs :first-child img {
-  padding-right: 9px;
+  padding-right: 8px;
+}
+
+.contactUs :nth-child(2) img {
+  padding-right: 5px;
 }
 
 .slider__arrow {
