@@ -88,8 +88,10 @@ h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1188px;
   padding: 17px 1px;
 }
 
@@ -137,20 +139,28 @@ h4 {
 }
 
 .header__menubtn {
-  margin: 0 5px 0 342px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 11px;
+  padding-top: 17px;
 }
 
 .header__menubtn a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-decoration: none;
+  width: 72px;
   color: #403F3D;
-}
-
-.header__menubtn img {
-  padding-top: 3px;
 }
 
 .link_active {
@@ -160,7 +170,7 @@ h4 {
 .link_active::after {
   position: absolute;
   content: "";
-  bottom: -6px;
+  bottom: -3px;
   display: block;
   width: 101%;
   height: 2px;
@@ -168,6 +178,7 @@ h4 {
 }
 
 .header__menubtn_active {
+  pointer-events: none;
   cursor: default;
 }
 
@@ -475,11 +486,7 @@ h4 {
   padding-top: 40px;
 }
 
-.menuCoffee__wrapper {
-  padding-left: 39px;
-}
-
-.menuCoffee__title {
+.menu__title {
   width: 800px;
   text-align: center;
   margin: auto;
@@ -497,7 +504,7 @@ h4 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 40px;
-  padding-bottom: 100px;
+  padding-bottom: 101px;
 }
 
 .coffeeDescription {
@@ -508,7 +515,7 @@ h4 {
   line-height: 150%;
 }
 
-.menuCoffee__tabs {
+.menu__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -821,7 +828,21 @@ h4 {
   border: 1px solid var(--border-light, #C1B6AD);
 }
 
-.card .card__image {
+.card:hover img {
+  -webkit-transform: scale(0.91);
+          transform: scale(0.91);
+}
+
+.card img {
+  width: 340px;
+  height: 340px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.card__image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,24 +858,12 @@ h4 {
   border-radius: 40px;
 }
 
-.card img {
-  width: 340px;
-  height: 340px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.card img:hover {
-  -webkit-transform: scale(0.92);
-          transform: scale(0.92);
-}
-
 .coffeeName {
   padding: 20px 0 0 20px;
 }
 
 .card__description {
-  padding: 12px 20px 0px 20px;
+  padding: 13px 20px 0px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -938,7 +947,7 @@ h4 {
 }
 
 .tab_active {
-  cursor: auto;
+  cursor: default;
   background-color: #665F55;
 }
 /*# sourceMappingURL=home.css.map */

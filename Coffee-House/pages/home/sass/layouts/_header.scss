@@ -12,7 +12,8 @@
 .navList {
     list-style-type:  none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    width: 1188px;
     padding: 17px 1px;
     li {
         margin: 0 21px;
@@ -50,18 +51,18 @@
 }
 
 .header__menubtn {
-    margin: 0 5px 0 342px;
     align-items: center;
-    padding-top: 11px;
+    padding-top: 17px;
 
     a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
         text-decoration: none;
+        width: 72px;
         color: $color-dark;
     }
-    img {
-        padding-top: 3px;
-    }
-    
 }
 
 .link_active {
@@ -69,7 +70,7 @@
 &::after {
     position: absolute;
     content: "";
-    bottom: -6px;
+    bottom: -3px;
     display: block;
     width: 101%;
     height: 2px;
@@ -77,5 +78,6 @@
 }}
 
 .header__menubtn_active {
+    pointer-events: none;
     cursor: default;
 }
