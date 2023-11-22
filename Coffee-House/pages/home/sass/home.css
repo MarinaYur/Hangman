@@ -246,7 +246,9 @@ h4 {
 .enjoy__content {
   height: 644px;
   width: 1360px;
+
   background-image: url(./container.png);
+
   border-radius: 40px;
   padding-top: 102px;
 }
