@@ -1,19 +1,18 @@
 .header-container {
-    height: 60px;
     display: flex;
     justify-content: space-between;
     padding: 20px 0 0 0;
 }
 .header__nav {
     display: flex;
-    justify-content: space-around;
+    flex-grow: 0.469;
+    justify-content: space-between;
 }
 
 .navList {
     list-style-type:  none;
     display: flex;
     justify-content: center;
-    width: 1188px;
     padding: 17px 1px;
     li {
         margin: 0 21px;
@@ -25,7 +24,9 @@
         text-decoration: none;
         padding: 0;
     }
-   
+   @include media-tablet {
+    display: none;
+   }
 }
 .link {
     position: relative;

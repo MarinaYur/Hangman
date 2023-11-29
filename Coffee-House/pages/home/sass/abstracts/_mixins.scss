@@ -14,3 +14,11 @@
         flex-basis: $width;
     }
 }
+
+@mixin media-tablet {
+    @media screen and (width: 348px) {@content};
+}
+
+@mixin media-mobile {
+    @media screen and (min-width: 380px) and (max-width: 767px) {@content};
+}

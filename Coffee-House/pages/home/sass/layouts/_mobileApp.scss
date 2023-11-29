@@ -1,6 +1,17 @@
 .wrapper__mobileApp {
     padding-top: 72px;
     padding-bottom: 92.5px;
+    @include media-tablet {
+        padding-top: 38.8rem;
+    }
+}
+
+.mobileApp__container {
+    display: flex;
+    flex-wrap: wrap;
+//    @include media-tablet {
+//     display: block;
+//    }
 }
 
 .mobileApp__download {
@@ -11,17 +22,23 @@
 }
 
 .mobileApp__left {
-    width: 630px;
+    max-width: 630px;
     p {
         @include font (1.6rem, 150%, 400, normal);
     }
     h2 {
         padding-bottom: 40px;
     }
+    @include media-tablet {
+        width: 100%;
+    }
 }
 
 .mobileApp__phones {
-    padding: 28px 0px 0 53px;
+    padding: 2.8rem 0px 0 5.3rem;
+    @include media-tablet {
+      padding: 10rem 0px 0 2.9rem;
+    }
 }
     
 .mobailApp__buttons {
