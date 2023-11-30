@@ -5,6 +5,7 @@
     padding: 0px 37px 0px 40px;
 
     h2 {
+        padding-top: 38px;
         padding-bottom: 40px;
     }
 }
@@ -16,7 +17,9 @@ span {
 .about__photos {
     display: flex;
     flex-wrap: wrap;
-    gap: 37px;
+    gap: 38px;
+    margin: 0 auto;
+    // justify-content: center;
     @include media-tablet {
         flex-direction: column;
         gap: 40px;
@@ -24,6 +27,7 @@ span {
 }
 
 .photos {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -36,9 +40,9 @@ span {
         overflow: hidden;
 
         img {
-            width:100%;
-            height: 100%;
-            object-fit: cover;
+            width:110%;
+            // height: 100%;
+            // object-fit: cover;
             transition: all 0.5s;
 
             &:hover {
@@ -54,17 +58,16 @@ span {
 }
 
 .about__photo1 {
-    width: 660px;
-    height: 590px;
+    max-width: 66.0rem;
+    max-height: 59.0rem;
     @include media-tablet {
-        width: 68.8rem;
-        height: 59.0rem;
+        max-width: 688px;
     }
 }
 
 .about__photo2 {
-    width: 660px;
-    height: 430px;
+    max-width: 66.0rem;
+    max-height: 43.0rem;
      @include media-tablet {
         width: 0px;
         height: 0px;
@@ -76,8 +79,8 @@ span {
 }
 
 .about__photo3 {
-    width: 660px;
-    height: 430px;
+    max-width: 66.0rem;
+    max-height: 43.0rem;
     @include media-tablet {
         width: 0px;
         height: 0px;
@@ -88,10 +91,9 @@ span {
 }
 
 .about__photo4 {
-    width: 660px;
-    height: 590px;
+    max-width: 66.0rem;
+    max-height: 59.0rem;
     @include media-tablet {
-        width: 68.8rem;
-        height: 59.0rem;
+        max-width: 68.8rem;
     }
 }

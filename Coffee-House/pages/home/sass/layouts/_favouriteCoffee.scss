@@ -1,15 +1,11 @@
 .favouritesCoffee {
     scroll-behavior: smooth;
-    height: 961px;
     h2 {
         text-align: center;
-        padding-top: 62px;
+        padding-top: 99px;
     }
     span {
         @extend %spanAccent;
-    }
-    .wrapper {
-        height: 999px;
     }
 }
 
@@ -44,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    padding-top: 39.5px;
+    padding: 39.5px 0 63px 0;
     @include media-tablet {
         padding-top: 3.9rem;
     }

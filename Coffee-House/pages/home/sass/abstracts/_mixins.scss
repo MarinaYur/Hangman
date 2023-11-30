@@ -16,9 +16,9 @@
 }
 
 @mixin media-tablet {
-    @media screen and (width: 348px) {@content};
+    @media screen and (max-width: 768px) and (min-width: 662px) {@content};
 }
 
 @mixin media-mobile {
-    @media screen and (min-width: 380px) and (max-width: 767px) {@content};
+    @media screen and (min-width: 661px) and (max-width: 380px) {@content};
 }
