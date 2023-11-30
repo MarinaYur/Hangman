@@ -6,11 +6,11 @@
     display: flex;
     background-color: $color-backgroundFooter;
     gap: calc(32px + 2vw);
-    padding: calc(34px + 2vw);
+    padding: calc(33px + 2vw);
     border-radius: 40px;
     @include media-tablet {
         flex-wrap: wrap;
-        padding: 10.1rem 6rem 8.6rem 6rem;
+        padding: 101px 6rem 86px 6rem;
         flex-direction: column;
         gap: 101px;
     }
