@@ -13,21 +13,21 @@
         padding: 10rem 6rem 8.6rem 6rem;
         gap: 102px;
     }
+    @include media-mobile {
+        padding: 63px 0px 44px 16px;
+        gap: 9px;
+    }
 }
 
 .footer__sir {
-    p {
-        @include font (6.0rem, 125%, 600, normal);
+    h2 {
         color: $color-light;
+        padding-bottom: 39px;
     }
 
     img {
         padding-top: 7px;
     }
-}
-
-.itscoffee {
-    padding-bottom: 40px;
 }
 
 .footer__contacts {

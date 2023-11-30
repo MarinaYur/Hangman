@@ -2,12 +2,18 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 0 13px 0;
+    @include media-mobile {
+        padding: 20px 0 12px 0;
+    }
 }
 .header__nav {
     display: flex;
     flex-grow: 0.5;
     justify-content: space-between;
     @include media-tablet {
+    display: none;
+   }
+   @include media-mobile {
     display: none;
    }
 }
@@ -111,6 +117,10 @@
   background-color: #616161;
 }
     @include media-tablet {
+        display: block;
+        margin-top: 8px;
+       }
+       @include media-mobile {
         display: block;
         margin-top: 8px;
        }

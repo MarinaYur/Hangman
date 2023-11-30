@@ -25,6 +25,9 @@
         @include media-tablet {
             padding-right: 29px;
         }
+        @include media-mobile {
+            padding-right: 29px;
+        }
     }
 
     .enjoy__svg {
@@ -34,6 +37,13 @@
             opacity: 1;
             padding-left: 51px;
             line-height: 0;
+        }
+        @include media-mobile {
+            @include media-mobile {
+                opacity: 1;
+                padding-left: 51px;
+                line-height: 0;
+            }
         }
     }
 
@@ -61,6 +71,9 @@
     background-position: center;
     @include media-tablet {
         background-image: url(../../../assets/container-hero.png);
+    }
+    @include media-mobile {
+        padding: 63px 16px 60px 5px;
     }
 }
 
@@ -95,6 +108,9 @@
     @include media-tablet {
         line-height: 105%;
     }
+    @include media-mobile {
+        line-height: 111%;
+    }
 
 }
 
@@ -103,5 +119,8 @@
     font-weight: 400;
     @include media-tablet {
         padding-bottom: 38px;
+    }
+    @include media-mobile {
+        padding-bottom: 40px;
     }
 }
