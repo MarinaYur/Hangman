@@ -3,6 +3,9 @@
     h2 {
         text-align: center;
         padding-top: 99px;
+        @include media-tablet {
+            padding-top: 100px;
+        }
     }
     span {
         @extend %spanAccent;

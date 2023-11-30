@@ -5,28 +5,33 @@
     border: 1px solid var(--border-light, #C1B6AD);
     cursor: default;
 
-    &:hover {
-        img {
-            transform: scale(0.91);
+    @media (hover:hover) {
+        &:hover {
+            img {
+                transform: scale(0.91);
+            }
         }
     }
+
     img {
-            width: 340px;
-            height: 340px;
-            transition: transform 0.5s;
-        }
+        width: 340px;
+        height: 340px;
+        transition: transform 0.5s;
+    }
 
 }
-.card__image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            width: 310px;
-            height: 310px;
-            border-radius: 40px;
 
-        }
+.card__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 310px;
+    height: 310px;
+    border-radius: 40px;
+
+}
+
 .coffeeName {
     padding: 20px 0 0 20px;
 }

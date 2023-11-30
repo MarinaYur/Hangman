@@ -6,10 +6,12 @@
     gap: 8px;
     border-radius: 100px;
     border: 1px solid var(--border-light, #C1B6AD);
-    cursor: pointer;
+    
     transition: 0.5s linear;
 
-    &:hover {
+    @media (hover:hover) {
+        cursor: pointer;
+        &:hover {
         background-color: $color-backgroundFooter;
 
         .tabIcon {
@@ -20,6 +22,7 @@
             color: $color-light;
         }
     }
+}
 }
 
 .tabName {

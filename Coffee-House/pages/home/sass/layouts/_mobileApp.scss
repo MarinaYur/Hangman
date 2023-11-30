@@ -3,16 +3,20 @@
     padding-bottom: 92px;
     @include media-tablet {
         padding-top: 99px;
+        padding-bottom: 93px;
     }
     @include media-mobile {
         padding-top: 13px;
+        padding-bottom: 94px;
     }
 }
 
 .mobileApp__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 100px;
+    
    @include media-mobile {
     gap: 11px;;
    }
@@ -21,12 +25,15 @@
 .mobileApp__download {
     // padding-top: 172px;
     flex: 1;
-    padding-top: calc(7px + 14vh);
+    padding-top: 172px;
     span {
         @extend %spanAccent;
     }
     @include media-tablet {
         padding-top: 0px;
+    }
+    @include media-mobile {
+        padding-top: 87px;
     }
 }
 
@@ -49,7 +56,7 @@
         width: 100%;
     }
     @include media-tablet {
-        padding: 0px 0px 0 29px;
+        padding: 0px 0px 0 0px;
     }
 }
     

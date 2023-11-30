@@ -10,10 +10,12 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid $color-dark;
-    cursor: pointer;
+    
     transition: 0.3s linear;
 
-    &:hover {
+    @media (hover:hover) {
+        cursor: pointer;
+        &:hover {
         background-color: $color-backgroundFooter;
 
         svg * {
@@ -21,6 +23,7 @@
             fill: $color-light;
         }
     }
+}
     @include media-mobile {
         display: none;
     }

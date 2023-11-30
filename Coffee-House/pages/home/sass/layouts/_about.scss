@@ -3,6 +3,7 @@
     margin: 0 auto;
     background: #E1D4C9;
     padding: 0px 37px 0px 40px;
+
     @include media-mobile {
         padding: 0px 16px 0px 16px;
     }
@@ -22,11 +23,13 @@ span {
     flex-wrap: wrap;
     gap: 38px;
     margin: 0 auto;
+
     // justify-content: center;
     @include media-tablet {
         flex-direction: column;
         gap: 40px;
     }
+
     @include media-mobile {
         flex-direction: column;
         gap: 0px;
@@ -45,84 +48,91 @@ span {
         align-items: center;
         justify-content: center;
         overflow: hidden;
+
+        
+        img {
+            width: 110%;
         @include media-mobile {
-            max-width: 348px;
+            width: 210%;
+        }   
+
         }
 
-        img {
-            width:110%;
+        @media (hover:hover) {
             transition: all 0.5s;
 
             &:hover {
                 transition: 1s;
                 transform: scale(0.9);
             }
-            @include media-mobile {
-                width: 726px;
-            }
         }
 
-
     }
+
     @include media-tablet {
         display: block;
     }
+
     @include media-mobile {
-        margin: 0 auto;
-        max-width: 348px;
+    //     margin: 0 auto;
+    //     max-width: 348px;
         gap: 20px;
     }
 }
 
+
 .about__photo1 {
     max-width: 66.0rem;
     max-height: 59.0rem;
+
     @include media-tablet {
         max-width: 688px;
     }
-    // @include media-mobile {
-    //     img {
-    //         width: 100%;
-    //     }
-    // }
 }
 
 .about__photo2 {
     max-width: 66.0rem;
     max-height: 43.0rem;
-     @include media-tablet {
+
+    @include media-tablet {
         width: 0px;
         height: 0px;
+
         img {
-        
-        display: none;
+
+            display: none;
+        }
     }
-     }
-     @include media-mobile {
+
+    @include media-mobile {
         flex-basis: 0;
-       
-     }
-     
+
+    }
+
 }
 
 .about__photo3 {
     max-width: 66.0rem;
     max-height: 43.0rem;
+
     @include media-tablet {
         width: 0px;
         height: 0px;
+
         img {
             display: none;
         }
-     }
-     @include media-mobile {
+    }
+
+    @include media-mobile {
         flex-basis: 0;
-     }
+    }
 }
 
 .about__photo4 {
     max-width: 66.0rem;
     max-height: 59.0rem;
+
     @include media-tablet {
         max-width: 68.8rem;
     }
