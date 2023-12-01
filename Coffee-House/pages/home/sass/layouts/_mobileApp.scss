@@ -1,31 +1,70 @@
 .wrapper__mobileApp {
     padding-top: 72px;
-    padding-bottom: 92.5px;
+    padding-bottom: 92px;
+    @include media-tablet {
+        padding-top: 99px;
+        padding-bottom: 93px;
+    }
+    @include media-mobile {
+        padding-top: 13px;
+        padding-bottom: 94px;
+    }
+}
+
+.mobileApp__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    
+   @include media-mobile {
+    gap: 11px;;
+   }
 }
 
 .mobileApp__download {
+    // padding-top: 172px;
+    flex: 1;
     padding-top: 172px;
     span {
         @extend %spanAccent;
     }
+    @include media-tablet {
+        padding-top: 0px;
+    }
+    @include media-mobile {
+        padding-top: 87px;
+    }
 }
 
 .mobileApp__left {
-    width: 630px;
     p {
         @include font (1.6rem, 150%, 400, normal);
     }
     h2 {
         padding-bottom: 40px;
     }
+    @include media-tablet {
+        width: 100%;
+    }
 }
 
 .mobileApp__phones {
-    padding: 28px 0px 0 53px;
+    // flex: 1;
+    padding: 2.8rem 0px 0 0rem;
+    img {
+        width: 100%;
+    }
+    @include media-tablet {
+        padding: 0px 0px 0 0px;
+    }
 }
     
 .mobailApp__buttons {
     display: flex;
     gap: 20px;
     padding-top: 40px;
+    @include media-mobile {
+        flex-direction: column;
+    }
 }

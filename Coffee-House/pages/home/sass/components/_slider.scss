@@ -1,3 +1,7 @@
+// .favouritesCoffee__slider {
+//     width: 100%;
+// }
+
 .slider__arrow {
     width: 60px;
     height: 60px;
@@ -6,10 +10,12 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid $color-dark;
-    cursor: pointer;
+    
     transition: 0.3s linear;
 
-    &:hover {
+    @media (hover:hover) {
+        cursor: pointer;
+        &:hover {
         background-color: $color-backgroundFooter;
 
         svg * {
@@ -17,39 +23,64 @@
             fill: $color-light;
         }
     }
-
+}
+    @include media-mobile {
+        display: none;
+    }
+    
 }
 
 .slider__leftArrow {
-    margin: 330px 0 0 4.5px;
-
+    margin: 39px 0 0 4px;
+    @include media-tablet {
+            margin: 39px 0 0 0;
+        }
 }
 
 .slider__rightArrow {
-    margin: 330px 5px 0 0;
+    margin: 39px 4px 0 0;
+    @include media-tablet {
+        margin: 39px 0 0 0px;
+    }
 }
 
 .slider__container {
+    display: flex;
     overflow: hidden;
-    width: 1260px;
+    // width: 123rem;
 }
 
 .slider {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
 .slide {
-    width: 1152px;
+    width: 100% ;
     height: 100%;
     text-align: center;
-    padding-left: 81px;
+    margin: 0 auto;
+    // padding: 0 4rem;
 
     img {
         padding-top: 40px;
+        @include media-mobile {
+            max-width: 348px;
+        }
     }
 
     h4 {
         padding-top: 14px
+    }
+    @include media-tablet {
+        width: 48rem;
+    }
+    br {
+        @include media-mobile {
+            display: none;
+        }
     }
 }
