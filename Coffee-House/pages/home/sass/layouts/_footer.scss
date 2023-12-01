@@ -3,25 +3,38 @@
 }
 
 .footer__container {
-    height: 450px;
+    display: flex;
     background-color: $color-backgroundFooter;
-    padding: 100px;
+    gap: calc(32px + 2vw);
+    padding: calc(33px + 2vw);
     border-radius: 40px;
+    @include media-tablet {
+        flex-wrap: wrap;
+        padding: 101px 6rem 86px 6rem;
+        flex-direction: column;
+        gap: 101px;
+    }
+    @include media-mobile {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 61px 0px 46px 16px;
+        gap: 9px;
+        br {
+            display: none;
+        }
+    }
 }
 
 .footer__sir {
-    p {
-        @include font (6.0rem, 125%, 600, normal);
+    flex: 1;
+    h2 {
         color: $color-light;
+        padding-bottom: 39px;
     }
 
     img {
         padding-top: 7px;
     }
-}
-
-.itscoffee {
-    padding-bottom: 40px;
 }
 
 .footer__contacts {
@@ -58,18 +71,22 @@
         }
     }
 
+    @media (hover:hover) {
     li:hover {
-        background-color: $color-light;
+    background-color: $color-light;
 
-        svg * {
-            stroke: $color-dark;
-        }
+    svg * {
+        stroke: $color-dark;
     }
+}
+}
 
 }
 
 .footer__contactUs {
-    padding: 32px 0 0px 50px;
+    flex-basis: 40%;
+    flex: 1;
+    padding: 3.2rem 0 0px 0rem;
 
     p {
         @include font (2.4rem, 125%, 600, normal);
@@ -102,7 +119,15 @@
         transition: 0.6s;
     }
 
-    a:hover:after {
+    @media (hover:hover) {
+        a:hover:after {
         width: 175px;
+    }
+}
+    @include media-tablet {
+        padding: 0rem 0 0px 0px;
+    }
+    @include media-mobile {
+        padding: 35px 0 0px 0rem;
     }
 }

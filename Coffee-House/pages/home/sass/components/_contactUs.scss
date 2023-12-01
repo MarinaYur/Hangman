@@ -28,4 +28,10 @@
             padding-right: 5px;
         }
     }
+    @include media-tablet {
+        padding-top: 3.7rem;
+    }
+    @include media-mobile {
+        padding-top: 37px;
+    }
 }

@@ -1,32 +1,39 @@
 .card {
-    width: 310px;
+    max-width: 310px;
     height: 506px;
     border-radius: 40px;
     border: 1px solid var(--border-light, #C1B6AD);
     cursor: default;
 
-    &:hover {
-        img {
-            transform: scale(0.91);
+    @media (hover:hover) {
+        &:hover {
+            img {
+                transform: scale(0.91);
+            }
         }
     }
+
     img {
-            width: 340px;
-            height: 340px;
-            transition: transform 0.5s;
-        }
+        max-width: 340px;
+        height: 340px;
+        transition: transform 0.5s;
+    }
+@include media-tablet {
+    max-width: 47%;
+}
+}
+
+.card__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 310px;
+    border-radius: 40px;
 
 }
-.card__image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            width: 310px;
-            height: 310px;
-            border-radius: 40px;
 
-        }
 .coffeeName {
     padding: 20px 0 0 20px;
 }
