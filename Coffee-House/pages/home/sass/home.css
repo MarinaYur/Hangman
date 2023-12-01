@@ -191,8 +191,11 @@ h4 {
   padding-left: 1px;
 }
 
-.logoHome {
-  cursor: default;
+@media (hover: hover) {
+  .logoHome {
+    cursor: default;
+    text-decoration: none;
+  }
 }
 
 .h1none {
@@ -287,6 +290,12 @@ h4 {
 
 .hamburger .menu-btn span:nth-of-type(3) {
   top: calc(50% + 5px);
+}
+
+.linkToMenuOnHamburger {
+  display: block;
+  width: 44px;
+  height: 44px;
 }
 
 .enjoy__button {
@@ -582,6 +591,7 @@ h4 {
 }
 
 .photos {
+  max-width: calc((100% - 40px) / 2);
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -610,12 +620,12 @@ h4 {
 }
 
 .photos div img {
-  width: 110%;
+  max-width: 110%;
 }
 
 @media screen and (max-width: 661px) and (min-width: 280px) {
   .photos div img {
-    width: 210%;
+    max-width: 210%;
   }
 }
 
@@ -634,36 +644,57 @@ h4 {
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .photos {
-    display: block;
+    gap: 0;
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 661px) and (min-width: 280px) {
   .photos {
     gap: 20px;
+    max-width: 100%;
   }
 }
 
 .about__photo1 {
-  max-width: 66.0rem;
-  max-height: 59.0rem;
+  max-width: 660px;
+}
+
+@media screen and (min-width: 769px) {
+  .about__photo1 {
+    aspect-ratio: 660 / 590;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .about__photo1 {
     max-width: 688px;
+    height: 59.0rem;
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 280px) {
+  .about__photo1 {
+    display: block;
+    max-width: 688px;
+    height: 59.0rem;
   }
 }
 
 .about__photo2 {
   max-width: 66.0rem;
-  max-height: 43.0rem;
+}
+
+@media screen and (min-width: 769px) {
+  .about__photo2 {
+    aspect-ratio: 660 / 430;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .about__photo2 {
-    width: 0px;
-    height: 0px;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
   }
   .about__photo2 img {
     display: none;
@@ -679,7 +710,12 @@ h4 {
 
 .about__photo3 {
   max-width: 66.0rem;
-  max-height: 43.0rem;
+}
+
+@media screen and (min-width: 769px) {
+  .about__photo3 {
+    aspect-ratio: 660 / 430;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
@@ -701,12 +737,25 @@ h4 {
 
 .about__photo4 {
   max-width: 66.0rem;
-  max-height: 59.0rem;
+}
+
+@media screen and (min-width: 769px) {
+  .about__photo4 {
+    aspect-ratio: 660 / 590;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .about__photo4 {
-    max-width: 68.8rem;
+    max-width: 688px;
+    height: 59.0rem;
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 280px) {
+  .about__photo4 {
+    max-width: 688px;
+    height: 59.0rem;
   }
 }
 
@@ -1101,6 +1150,12 @@ h4 {
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .footer__contactUs {
     padding: 0rem 0 0px 0px;
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 280px) {
+  .footer__contactUs {
+    padding: 35px 0 0px 0rem;
   }
 }
 
