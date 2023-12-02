@@ -1,10 +1,12 @@
 .about__wrapper {
-    // width: 1440px;
     margin: 0 auto;
     background: #E1D4C9;
     padding: 0px 37px 0px 40px;
 
-    @include media-mobile {
+    // @include media-mobile {
+    //     padding: 0px 16px 0px 16px;
+    // }
+    @include media-mobile1 {
         padding: 0px 16px 0px 16px;
     }
 
@@ -23,14 +25,16 @@ span {
     flex-wrap: wrap;
     gap: 38px;
     margin: 0 auto;
-
-    // justify-content: center;
     @include media-tablet {
         flex-direction: column;
         gap: 40px;
     }
 
     @include media-mobile {
+        flex-direction: column;
+        gap: 0px;
+    }
+    @include media-mobile1 {
         flex-direction: column;
         gap: 0px;
     }
@@ -51,9 +55,10 @@ span {
         overflow: hidden;
         img {
             max-width: 110%;
-            @include media-mobile {
+            @include media-mobile1 {
                 max-width: 210%;
             }
+            
         }
 
         @media (hover:hover) {
@@ -76,8 +81,11 @@ span {
         gap: 20px;
         max-width: 100%;
     }
+    @include media-mobile1 {
+        gap: 20px;
+        max-width: 100%;
+    }
 }
-
 
 .about__photo1 {
     max-width: 660px;
@@ -85,13 +93,19 @@ span {
     aspect-ratio: 660 / 590;}
     @include media-tablet {
         max-width: 688px;
-        height: 59.0rem;
+        // height: 59.0rem;
+        aspect-ratio: 688 / 590;
     }
     @include media-mobile {
+        max-width: 688px;
+        aspect-ratio: 688 / 590;
+    }
+    @include media-mobile1 {
         display: block;
         max-width: 688px;
         height: 59.0rem;
     }
+    
 }
 
 .about__photo2 {
@@ -109,6 +123,10 @@ span {
     }
 
     @include media-mobile {
+        flex-basis: 0;
+
+    }
+    @include media-mobile1 {
         flex-basis: 0;
 
     }
@@ -134,6 +152,9 @@ span {
     @include media-mobile {
         flex-basis: 0;
     }
+    @include media-mobile1 {
+        flex-basis: 0;
+    }
 }
 
 .about__photo4 {
@@ -145,10 +166,17 @@ span {
 
     @include media-tablet {
      max-width: 688px;
-     height: 59.0rem;
+    //  height: 59.0rem;
+    aspect-ratio: 688 / 590;
     }
     @include media-mobile {
         max-width: 688px;
+        aspect-ratio: 688 / 590;
+    }
+    @include media-mobile1 {
+        display: block;
+        max-width: 688px;
         height: 59.0rem;
     }
+    
 }

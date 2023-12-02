@@ -5,19 +5,28 @@
 .footer__container {
     display: flex;
     background-color: $color-backgroundFooter;
-    gap: calc(32px + 2vw);
-    padding: calc(33px + 2vw);
+    gap: 100px;
+    padding: 100px;
     border-radius: 40px;
     @include media-tablet {
         flex-wrap: wrap;
-        padding: 101px 6rem 86px 6rem;
+        padding: 102px 6rem 85px 6rem;
         flex-direction: column;
         gap: 101px;
     }
     @include media-mobile {
         flex-direction: column;
         flex-wrap: wrap;
-        padding: 61px 0px 46px 16px;
+        padding: 61px 0px 45px 16px;
+        gap: 9px;
+        br {
+            display: none;
+        }
+    }
+    @include media-mobile1 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 61px 0px 45px 16px;
         gap: 9px;
         br {
             display: none;
@@ -128,6 +137,9 @@
         padding: 0rem 0 0px 0px;
     }
     @include media-mobile {
-        padding: 35px 0 0px 0rem;
+        padding: 33px 0 0px 0rem;
+    }
+    @include media-mobile1 {
+        padding: 33px 0 0px 0rem;
     }
 }

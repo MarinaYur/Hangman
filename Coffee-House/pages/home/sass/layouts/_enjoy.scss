@@ -1,5 +1,7 @@
 // .enjoy__wrapper {
-//     padding: 1.3rem 4.0rem 3.8rem 4.0rem;
+//    @include media-mobile1 {
+//     padding: 0px 16px 0px 16px;
+//    }
 // }
 
 .enjoy__button {
@@ -8,7 +10,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    
+
 
     a {
         display: flex;
@@ -22,10 +24,16 @@
     .enjoy__menu {
         position: absolute;
         transition: transform 0.6s;
+
         @include media-tablet {
             padding-right: 29px;
         }
+
         @include media-mobile {
+            padding-right: 29px;
+        }
+
+        @include media-mobile1 {
             padding-right: 29px;
         }
     }
@@ -33,34 +41,41 @@
     .enjoy__svg {
         padding-left: 59px;
         opacity: 0;
+
         @include media-tablet {
             opacity: 1;
             padding-left: 51px;
             line-height: 0;
         }
+
         @include media-mobile {
-            @include media-mobile {
-                opacity: 1;
-                padding-left: 51px;
-                line-height: 0;
-            }
+            opacity: 1;
+            padding-left: 51px;
+            line-height: 0;
+        }
+        @include media-mobile1 {
+            opacity: 1;
+            padding-left: 51px;
+            line-height: 0;
         }
     }
 
     @media (hover:hover) {
         cursor: pointer;
-        &:hover {
-        .enjoy__svg {
-            display: block;
-            margin-left: 6px;
-            opacity: 100%;
-        }
 
-        .enjoy__menu {
-            display: block;
-            transform: translateX(-12px);
+        &:hover {
+            .enjoy__svg {
+                display: block;
+                margin-left: 6px;
+                opacity: 100%;
+            }
+
+            .enjoy__menu {
+                display: block;
+                transform: translateX(-12px);
+            }
         }
-    }}
+    }
 
 }
 
@@ -71,25 +86,38 @@
     padding-bottom: 101px;
     background-size: cover;
     background-position: center;
+
     @include media-tablet {
         background-image: url(../../../assets/container-hero.png);
         padding-bottom: 100px;
     }
+
     @include media-mobile {
+        padding: 63px 16px 60px 5px;
+    }
+    @include media-mobile1 {
         padding: 63px 16px 60px 5px;
     }
 }
 
 .enjoy__left {
-    padding-left: 3vw;
+    padding-left: 100px;
+
     @include media-tablet {
         padding-left: 60px;
+    }
+    @include media-mobile {
+        padding-left: 11px;
+    }
+    @include media-mobile1 {
+        padding-left: 11px;
     }
 
     p,
     h1 {
         max-width: 560px;
         color: $color-light;
+
         @include media-tablet {
             width: 100%;
         }
@@ -108,10 +136,15 @@
 
 .enjoy__left h1 {
     padding-bottom: 41px;
+
     @include media-tablet {
         line-height: 105%;
     }
+
     @include media-mobile {
+        line-height: 111%;
+    }
+    @include media-mobile1 {
         line-height: 111%;
     }
 
@@ -120,10 +153,15 @@
 .enjoy__left p {
     padding-bottom: 40px;
     font-weight: 400;
+
     @include media-tablet {
         padding-bottom: 38px;
     }
+
     @include media-mobile {
+        padding-bottom: 40px;
+    }
+    @include media-mobile1 {
         padding-bottom: 40px;
     }
 }
