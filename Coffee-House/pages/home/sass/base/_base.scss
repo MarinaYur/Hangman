@@ -32,13 +32,20 @@ h1 {
     @include media-mobile {
         font-size: calc(clamp(4.2rem, 2vw + 1rem, 7.2rem));
     }
+    @include media-mobile1 {
+        font-size: 4.2rem;
+    }
 }
 
 h2 {
     @include font (6.0rem, 125%, 600, normal);
     @include media-mobile {
-        font-size: calc(clamp(3.2rem, 2vw + 1rem, 6.0rem))
+        font-size: calc(clamp(3.2rem, 2vw + 1rem, 6.0rem));
+        
     }
+    @include media-mobile1 {
+            font-size: 3.2rem;
+        }
 }
 
 h4 {

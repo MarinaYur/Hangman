@@ -4,6 +4,12 @@
     border-radius: 40px;
     border: 1px solid var(--border-light, #C1B6AD);
     cursor: default;
+    @include media-tablet {
+        aspect-ratio: 310 / 506;
+    }
+    @include media-mobile {
+        aspect-ratio: 310 / 506;
+    }
 
     @media (hover:hover) {
         &:hover {
@@ -18,9 +24,9 @@
         height: 340px;
         transition: transform 0.5s;
     }
-@include media-tablet {
-    max-width: 47%;
-}
+// @include media-tablet {
+//     max-width: 47%;
+// }
 }
 
 .card__image {
@@ -35,7 +41,7 @@
 }
 
 .coffeeName {
-    padding: 20px 0 0 20px;
+    padding: 21px 0 0 20px;
 }
 
 .card__description {
