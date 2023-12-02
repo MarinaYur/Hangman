@@ -2,34 +2,47 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 0 13px 0;
+
     @include media-tablet {
-        padding: 20px 0 14px 0;
+        padding: 20px 0 11px 0;
     }
+
     @include media-mobile {
         padding: 20px 0 13px 0;
     }
+
+    @include media-mobile1 {
+        padding: 20px 0 13px 0;
+    }
 }
+
 .header__nav {
     display: flex;
     flex-grow: 0.5;
     justify-content: space-between;
+
     @include media-tablet {
-    display: none;
-   }
-   @include media-mobile {
-    display: none;
-   }
+        display: none;
+    }
+
+    @include media-mobile {
+        display: none;
+    }
+
+    @include media-mobile1 {
+        display: none;
+    }
 }
 
 .navList {
-    list-style-type:  none;
+    list-style-type: none;
     display: flex;
-    gap: calc(8px + 1vw);
+    gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
     flex-wrap: wrap;
     padding: 17px 1px;
-    
+
     a {
         cursor: default;
         @include font (1.6rem, 150%, 600, normal);
@@ -37,28 +50,31 @@
         text-decoration: none;
         padding: 0;
     }
-   
+
 }
+
 .link {
     position: relative;
 }
-.link::after{
-        position: absolute;
-        content: "";
-        bottom: -5px;
-        left: 50%;
-        display: block;
-        width: 0;
-        height: 2px;
-        background-color: $color-dark;
-        transform: translateX(-50%);
-        transition: 0.6s;
-    } 
-    @media (hover:hover) {
+
+.link::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: $color-dark;
+    transform: translateX(-50%);
+    transition: 0.6s;
+}
+
+@media (hover:hover) {
     .link:hover:after {
-            width: 100%;
-        }
+        width: 100%;
     }
+}
 
 .logo {
     padding-left: 1px;
@@ -67,10 +83,10 @@
 
 .logoHome {
     @media (hover:hover) {
-    cursor: default;
-    text-decoration: none;
+        cursor: default;
+        text-decoration: none;
     }
-    
+
 }
 
 
@@ -95,15 +111,17 @@
 
 .link_active {
     cursor: default;
-&::after {
-    position: absolute;
-    content: "";
-    bottom: -3px;
-    display: block;
-    width: 101%;
-    height: 2px;
-    background-color: $color-dark;
-}}
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -3px;
+        display: block;
+        width: 101%;
+        height: 2px;
+        background-color: $color-dark;
+    }
+}
 
 .header__menubtn_active {
     pointer-events: none;
@@ -118,42 +136,49 @@
     border: 1px solid var(--border-dark, #665F55);
     display: none;
     position: relative;
-	z-index:2;
-	overflow: hidden;
-        // display: block;
-        // top: 50%;
-        // width: 5px;
-        // height: 5px;
-        // margin: 0 auto;
-        // background-color: red;
-    
+    z-index: 2;
+    overflow: hidden;
+    // display: block;
+    // top: 50%;
+    // width: 5px;
+    // height: 5px;
+    // margin: 0 auto;
+    // background-color: red;
+
     @include media-tablet {
         display: block;
         margin-top: 8px;
-       }
-       @include media-mobile {
+    }
+
+    @include media-mobile {
         display: block;
         margin-top: 8px;
-    
-        }
+    }
+
+    @include media-mobile1 {
+        display: block;
+        margin-top: 8px;
+    }
 
     // &>span,
-    span { 
+    span {
         width: 17px;
-	height: 2px;
-	position: absolute;
-	top: 61%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #222222;
-	transition: all 0.5s;
-}
-span:nth-of-type(2) {
-	top: calc(50% - 3px);
-}
-.menu-btn span:nth-of-type(3) {
-	top: calc(50% + 5px);
-}
+        height: 2px;
+        position: absolute;
+        top: 61%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222222;
+        transition: all 0.5s;
+    }
+
+    span:nth-of-type(2) {
+        top: calc(50% - 3px);
+    }
+
+    .menu-btn span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
 }
 
 .linkToMenuOnHamburger {

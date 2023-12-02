@@ -1,7 +1,7 @@
 .menu__wrapper {
     @include media-tablet {
         padding-bottom: 99px;
-}
+    }
 }
 
 .menu__title {
@@ -9,9 +9,10 @@
     text-align: center;
     margin: auto;
     padding-bottom: 39px;
+
     @include media-tablet {
-        padding-top: 0px;
-        padding-bottom: 38px;
+        padding-top: 2px;
+        padding-bottom: 39px;
     }
 }
 
@@ -19,25 +20,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: calc(5px + 1vw);
+    gap: 40px;
     padding-bottom: 101px;
-    
-    
+
+
     @include media-tablet {
-            padding: 0 13px 42px 13px;
-            gap: calc(32px + 1vw);
-        }
+        padding: 0 13px 42px 13px;
+        gap: calc(32px + 1vw);
+    }
+
     @include media-mobile {
         gap: calc(36px + 1vw);
         padding-bottom: 42px;
-    } 
+    }
+    @include media-mobile1 {
+        gap: calc(36px + 1vw);
+        padding-bottom: 42px;
+    }
 }
 
 .card:nth-child(n+5):nth-child(-n+8) {
     @include media-tablet {
         display: none;
     }
+
     @include media-mobile {
+        display: none;
+    }
+    @include media-mobile1 {
         display: none;
     }
 
@@ -55,24 +65,33 @@
     max-width: 361px;
     padding-bottom: 38px;
     margin: auto;
+
+    @include media-tablet {
+        padding-bottom: 38px;
+    }
     @include media-mobile {
+        gap: 7px;
+    }
+    @include media-mobile1 {
         gap: 7px;
     }
 }
 
 .refresh {
     display: none;
+
     @include media-tablet {
-            display: block;
-            margin: 0 auto;
-            width: 60px;
-            height: 60px;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 100px;
-            border: 1px solid var(--border-dark, #665F55);
-            background-image: url(../../../assets/refreshrefresh.png);
+        display: block;
+        margin: 0 auto;
+        width: 60px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100px;
+        border: 1px solid var(--border-dark, #665F55);
+        background-image: url(../../../assets/refreshrefresh.png);
     }
+
     @include media-mobile {
         display: block;
         margin: 0 auto;
@@ -84,5 +103,17 @@
         border-radius: 100px;
         border: 1px solid var(--border-dark, #665F55);
         background-image: url(../../../assets/refreshrefresh.png);
-}
+    }
+    @include media-mobile1 {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        width: 60px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100px;
+        border: 1px solid var(--border-dark, #665F55);
+        background-image: url(../../../assets/refreshrefresh.png);
+    }
 }
