@@ -44,7 +44,7 @@ h1 {
 
 @media screen and (max-width: 661px) and (min-width: 381px) {
   h1 {
-    font-size: calc(clamp(4.2rem, 2vw + 1rem, 7.2rem));
+    font-size: calc(clamp(4.2rem, 5vw + 1rem, 7.2rem));
   }
 }
 
@@ -64,7 +64,7 @@ h2 {
 
 @media screen and (max-width: 661px) and (min-width: 381px) {
   h2 {
-    font-size: calc(clamp(3.2rem, 2vw + 1rem, 6.0rem));
+    font-size: calc(clamp(3.2rem, 5vw + 1rem, 6.0rem));
   }
 }
 
@@ -92,6 +92,12 @@ h4 {
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .wrapper {
     max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 381px) {
+  .wrapper {
+    padding: 0px 16px 0px 16px;
   }
 }
 
@@ -1015,7 +1021,7 @@ h4 {
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .menu__wrapper {
-    padding-bottom: 99px;
+    padding-bottom: 100px;
   }
 }
 
@@ -1048,7 +1054,7 @@ h4 {
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .menuCoffee__cards {
-    padding: 0 13px 42px 13px;
+    padding: 0 13px 41px 13px;
     gap: calc(32px + 1vw);
   }
 }
@@ -1528,7 +1534,8 @@ h4 {
 
 @media screen and (max-width: 661px) and (min-width: 381px) {
   .slider__arrow {
-    display: none;
+    width: 60px;
+    aspect-ratio: 60 / 60;
   }
 }
 
@@ -1548,6 +1555,12 @@ h4 {
   }
 }
 
+@media screen and (max-width: 661px) and (min-width: 381px) {
+  .slider__leftArrow {
+    margin: 39px 0 0 0;
+  }
+}
+
 .slider__rightArrow {
   margin: 39px 4px 0 0;
 }
@@ -1555,6 +1568,12 @@ h4 {
 @media screen and (max-width: 768px) and (min-width: 662px) {
   .slider__rightArrow {
     margin: 39px 0 0 0px;
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 381px) {
+  .slider__rightArrow {
+    margin: 39px 0 0 0;
   }
 }
 
@@ -1579,6 +1598,12 @@ h4 {
           align-items: center;
 }
 
+@media screen and (max-width: 661px) and (min-width: 381px) {
+  .slider {
+    aspect-ratio: auto;
+  }
+}
+
 .slide {
   width: 100%;
   height: 100%;
@@ -1592,7 +1617,7 @@ h4 {
 
 @media screen and (max-width: 661px) and (min-width: 381px) {
   .slide img {
-    max-width: 348px;
+    max-width: 100%;
   }
 }
 
