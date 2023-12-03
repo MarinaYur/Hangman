@@ -21,7 +21,8 @@
     }
 }
     @include media-mobile {
-        display: none;
+        width: 60px;
+        aspect-ratio: 60 / 60;
     }
     @include media-mobile1 {
         display: none;
@@ -34,12 +35,18 @@
     @include media-tablet {
             margin: 39px 0 0 0;
         }
+        @include media-mobile {
+            margin: 39px 0 0 0;
+        }
 }
 
 .slider__rightArrow {
     margin: 39px 4px 0 0;
     @include media-tablet {
         margin: 39px 0 0 0px;
+    }
+    @include media-mobile {
+        margin: 39px 0 0 0;
     }
 }
 
@@ -53,7 +60,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-
+    @include media-mobile {
+        aspect-ratio: auto;
+    }
 }
 
 .slide {
@@ -65,7 +74,7 @@
     img {
         padding-top: 40px;
         @include media-mobile {
-            max-width: 348px;
+            max-width: 100%;
         }
         @include media-mobile1 {
             max-width: 348px;

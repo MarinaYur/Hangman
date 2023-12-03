@@ -20,7 +20,6 @@ html {
 
 body {
     background-color: $color-background;
-    // width: $content-width;
     margin: auto;
     @include font (1.6rem, 150%, 600, normal);
     
@@ -30,7 +29,7 @@ h1 {
     @include font (7.2rem, 104%, 600, normal);
     color: $color-light;
     @include media-mobile {
-        font-size: calc(clamp(4.2rem, 2vw + 1rem, 7.2rem));
+        font-size: calc(clamp(4.2rem, 5vw + 1rem, 7.2rem));
     }
     @include media-mobile1 {
         font-size: 4.2rem;
@@ -40,7 +39,7 @@ h1 {
 h2 {
     @include font (6.0rem, 125%, 600, normal);
     @include media-mobile {
-        font-size: calc(clamp(3.2rem, 2vw + 1rem, 6.0rem));
+        font-size: calc(clamp(3.2rem, 5vw + 1rem, 6.0rem));
         
     }
     @include media-mobile1 {
