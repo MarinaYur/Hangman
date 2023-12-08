@@ -1,8 +1,6 @@
-// .enjoy__wrapper {
-//    @include media-mobile1 {
-//     padding: 0px 16px 0px 16px;
-//    }
-// }
+.enjoy__wrapper {
+   position: relative;
+}
 
 .enjoy__button {
     position: relative;
@@ -81,7 +79,7 @@
 }
 
 .enjoy__content {
-    background-image: url(../../../assets/container.png);
+    // background-image: url(../../../assets/container.png);
     border-radius: 40px;
     padding-top: 102px;
     padding-bottom: 101px;
@@ -102,6 +100,7 @@
 }
 
 .enjoy__left {
+    position: absolute;
     padding-left: 100px;
 
     @include media-tablet {
