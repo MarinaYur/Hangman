@@ -53,19 +53,23 @@
     }
 }
 
-.indiсator_active {
-    // background: $color-backgroundFooter;
-    // transition: 5s;
-}
+// .indiсator_active {
+//     // background: $color-backgroundFooter;
+//     // transition: 5s;
+// }
 
 .progress {
+    position: absolute;
     width: 0%;
     height: 4px;
     background: $color-backgroundFooter;
-    animation: move 5s linear infinite;
+    animation: move 5s linear;
     // transition-duration: linear 1s;
     // transform: translateX(0px);
 }
+// .progress:hover {
+//     animation-play-state: paused;
+// }
 
 @keyframes move {
     0% {

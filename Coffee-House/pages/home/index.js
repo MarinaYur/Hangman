@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const sliderIndiсators = document.querySelectorAll('.indiсator');
     const progresses = document.querySelectorAll('.progress');
     const activeIndicatorOfSlide = document.querySelector('.progress');
-
+// console.log(document.querySelector('.progress'));
     let position = 0;
     let indicatorIndex = 0;
     let wayProgress = 0;
     let prevIndex = 0 //for checking index of progress bar
+    let paused = false
 
 
 //hamburger
@@ -50,14 +51,30 @@ document.addEventListener("DOMContentLoaded", function() {
         //   s
     }
 
-    //linking the slider to its progress bar, adding class 'progress'
-const indicatorOfSlide = (index) => {
-        for (indicator of sliderIndiсators){
-            indicator.firstElementChild.classList.remove('progress');
-        }
-        sliderIndiсators[index].firstElementChild.classList.add('progress');
-        // progressAnimation(index);
+// document.querySelector('.progress').addEventListener('animationend', function (e) {
+//     console.log('.progress animationend called');
+//     console.log(e.currentTarget);
+//     console.log(e.target.parentElement.dataset.index);
+// })
+
+const animationEndListener = function (e) {
+    console.log('animationEndListener called');
+    console.log('Animation onEnd: ' + e.target.parentElement.dataset.index);
+    let index = parseInt(e.target.parentElement.dataset.index);
+
+    for (indicator of sliderIndiсators) {
+        indicator.firstElementChild.classList.remove('progress');
     }
+    if (index === sliderIndiсators.length - 1) {
+        index = -1;
+    }
+
+    console.log('progress will be added to ' + (index + 1));
+    sliderIndiсators[index + 1].firstElementChild.classList.add('progress');
+    nextSlide();
+}
+
+document.addEventListener('animationend', animationEndListener);
 
 
     // adding class 'slideActive' to slide
@@ -72,13 +89,17 @@ const slideActive = (index) => {
         activeSlide = document.querySelector('.slideActive');
         progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'paused';
+        paused = !paused;
+
 })
     sliderLine.addEventListener('mouseleave', function (e) {
         activeSlide = document.querySelector('.slideActive');
         progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'running';
+        paused = !paused;
     })
 
+    
     const nextSlide = () => {
         if (position < (sliderIndiсators.length - 1) * 480) {
         position += 480;
@@ -88,7 +109,6 @@ const slideActive = (index) => {
             indicatorIndex = 0;
         }
         sliderLine.style.left = -position + 'px';
-        indicatorOfSlide(indicatorIndex);
         slideActive(indicatorIndex);
     }
     
@@ -107,12 +127,27 @@ const slideActive = (index) => {
     
     rightArrow.addEventListener('click', nextSlide);
     leftArrow.addEventListener('click', prevSlide);
+let seconds = 5000;
 
-    setInterval(() => {
-        nextSlide()
-    }, 5000);
-//     setInterval(() => {
-//         progressAnimation()
-//     }, 1000);
+// let counterSeconds = setInterval(() => {
+//     if (seconds === 0){
+//         seconds = 5000;
+//     }
+//     if (!paused) {
+//         seconds -= 1000;
+//     }
+// }, 1000);
+// setInterval(() => {
+//     if (seconds === 0){
+//         seconds = 5000;
+//     }
+//     if (!paused) {
+//         seconds -= 1000;
+//     }
+// }, 1000);
+    
+    // setInterval(() => {
+    //     nextSlide()
+    // }, 5000);
 })
 // e.target.tagName
