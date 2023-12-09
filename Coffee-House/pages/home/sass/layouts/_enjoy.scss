@@ -1,6 +1,14 @@
 .enjoy__wrapper {
    position: relative;
 }
+.enjoyVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 644px;
+    object-fit: cover;
+    width: 100%;
+}
 
 .enjoy__button {
     position: relative;
@@ -21,42 +29,19 @@
     .enjoy__menu {
         position: absolute;
         transition: transform 0.6s;
-
-        // @include media-tablet {
             @media (hover:none) {
             padding-right: 29px;
         }
-
-        // @include media-mobile {
-        //     padding-right: 29px;
-        // }
-
-        // @include media-mobile1 {
-        //     padding-right: 29px;
-        // }
     }
 
     .enjoy__svg {
         padding-left: 59px;
         opacity: 0;
-
-        // @include media-tablet {
             @media (hover:none) {
             opacity: 1;
             padding-left: 51px;
             line-height: 0;
         }
-
-        // @include media-mobile {
-        //     opacity: 1;
-        //     padding-left: 51px;
-        //     line-height: 0;
-        // }
-        // @include media-mobile1 {
-        //     opacity: 1;
-        //     padding-left: 51px;
-        //     line-height: 0;
-        // }
     }
 
     @media (hover:hover) {
@@ -79,12 +64,17 @@
 }
 
 .enjoy__content {
-    // background-image: url(../../../assets/container.png);
+    background-image: url(../../../assets/container.png);
+    max-width: 1360px;
+    height: 644px;
     border-radius: 40px;
     padding-top: 102px;
     padding-bottom: 101px;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+    position: relative;
+    object-fit: contain;
 
     @include media-tablet {
         background-image: url(../../../assets/container-hero.png);
