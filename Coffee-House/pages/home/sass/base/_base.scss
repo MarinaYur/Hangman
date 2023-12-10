@@ -22,7 +22,11 @@ body {
     background-color: $color-background;
     margin: auto;
     @include font (1.6rem, 150%, 600, normal);
-    
+}
+
+
+.active__body {
+    overflow: hidden;
 }
 
 h1 {

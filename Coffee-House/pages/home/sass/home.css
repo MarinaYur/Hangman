@@ -33,6 +33,10 @@ body {
   line-height: 150%;
 }
 
+.active__body {
+  overflow: hidden;
+}
+
 h1 {
   font-family: 'Inter', 'Verdana', sans-serif;
   font-size: 7.2rem;
@@ -2002,9 +2006,6 @@ h4 {
 }
 
 @media (hover: hover) {
-  .tab {
-    cursor: pointer;
-  }
   .tab:hover {
     background-color: #665F55;
   }
@@ -2052,5 +2053,9 @@ h4 {
 .tab_active {
   cursor: default;
   background-color: #665F55;
+}
+
+.tab_active span {
+  color: #E1D4C9;
 }
 /*# sourceMappingURL=home.css.map */

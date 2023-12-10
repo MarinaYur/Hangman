@@ -9,27 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const activeIndicatorOfSlide = document.querySelector('.progress');
     const sliderContainer = document.querySelector('.slider__container');
     const slide = document.querySelector('.slide');
-    // console.log(slide.clientWidth);
-    let getWidthOfSlide = slide.clientWidth;
+    const body = document.body;
+    let getWidthOfSlide = slide?.clientWidth;
     let position = 0;
     let indicatorIndex = 0;
-    let wayProgress = 0;
-    let prevIndex = 0 //for checking index of progress bar
-    let paused = false
+    
     let x1 = null;
     let y1 = null;
 
-// const getWidthOfSlide = () => {
-    // function getWidthOfSlide() {
-    // for (slide of slides) {
-        // console.log(document.getElementById('slideImg').style);
-        // console.log(slide.clientWidth);
-//     }
-// }
-// getWidthOfSlide();
+
+
     //hamburger
-    document.getElementById("hamburger").addEventListener("click", function () {
+    document.getElementById("hamburger").addEventListener("click", function (e) {
+        console.log('e.target.className проверка');
         headerContainer.classList.toggle("open__menu");
+        body.classList.toggle('active__body');
     })
     document.getElementById("header__nav").addEventListener("click", function (e) {
         // console.log(e.target.className)
@@ -134,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function switchCouruselToRight() {
-        console.log(indicatorIndex + 'до перелистывания');
+        // console.log(indicatorIndex + 'до перелистывания');
         nextSlide()
-        console.log(indicatorIndex + "после перелистывания");
+        // console.log(indicatorIndex + "после перелистывания");
         if (indicatorIndex === 0) {
             sliderIndiсators[indicatorIndex + 2].firstElementChild.classList.remove('progress');
         } else {
@@ -146,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function switchCouruselToLeft() {
-        console.log(indicatorIndex + 'до перелистывания');
+        // console.log(indicatorIndex + 'до перелистывания');
         prevSlide();
-        console.log(indicatorIndex + "после перелистывания");
+        // console.log(indicatorIndex + "после перелистывания");
         if (indicatorIndex === 2) {
             sliderIndiсators[indicatorIndex - 2].firstElementChild.classList.remove('progress');
         } else {
@@ -159,5 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rightArrow.addEventListener('click', switchCouruselToRight);
     leftArrow.addEventListener('click', switchCouruselToLeft);
+
+
+    
 
 })
