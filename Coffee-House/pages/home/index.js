@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const headerContainer = document.querySelector(".header-container");
-    // const slide = document.querySelector(".slide");
     const slides = document.querySelectorAll('.slide');
     const sliderLine = document.querySelector('.slider__line')
     const leftArrow = document.querySelector('.slider__leftArrow');
@@ -8,12 +7,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const sliderIndiсators = document.querySelectorAll('.indiсator');
     const progresses = document.querySelectorAll('.progress');
     const activeIndicatorOfSlide = document.querySelector('.progress');
-// console.log(document.querySelector('.progress'));
+    const sliderContainer = document.querySelector('.slider__container');
     let position = 0;
     let indicatorIndex = 0;
     let wayProgress = 0;
     let prevIndex = 0 //for checking index of progress bar
     let paused = false
+    let x1 =null;
+    let y1 =null;
 
 
 //hamburger
@@ -28,39 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     //carousel
-    function slideOnMouseHover (index) {
-
-    }
-    sliderLine.addEventListener('mousemove', function () {
-        // console.log(e.target.classList);
-    })
-
-    // const fillingOfProgressBar = setInterval(animation, 5000);
-    function progressAnimation(index) {
-        if (index == prevIndex) {
-             wayProgress += 10;
-        progresses[index].style.width = wayProgress + 'px';
-        } else {
-            if (index )
-            wayProgress = 0;
-            progresses[index - 1].style.width = 0;
-            progresses[index].style.width = wayProgress + 'px';
-            
-        }
-       prevIndex = index;
-        //   s
-    }
-
-// document.querySelector('.progress').addEventListener('animationend', function (e) {
-//     console.log('.progress animationend called');
-//     console.log(e.currentTarget);
-//     console.log(e.target.parentElement.dataset.index);
-// })
 
 const animationEndListener = function (e) {
     console.log('animationEndListener called');
     console.log('Animation onEnd: ' + e.target.parentElement.dataset.index);
     let index = parseInt(e.target.parentElement.dataset.index);
+    indicatorIndex = index;
 
     for (indicator of sliderIndiсators) {
         indicator.firstElementChild.classList.remove('progress');
@@ -76,29 +50,58 @@ const animationEndListener = function (e) {
 
 document.addEventListener('animationend', animationEndListener);
 
-
-    // adding class 'slideActive' to slide
-const slideActive = (index) => {
-        for (slide of slides){
-            slide.classList.remove('slideActive');
-        }
-        slides[index].classList.add('slideActive');
-    }
-
     sliderLine.addEventListener('mouseenter', function (e) {
-        activeSlide = document.querySelector('.slideActive');
+        // activeSlide = document.querySelector('.slideActive');
         progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'paused';
-        paused = !paused;
 
 })
     sliderLine.addEventListener('mouseleave', function (e) {
-        activeSlide = document.querySelector('.slideActive');
+        // activeSlide = document.querySelector('.slideActive');
         progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'running';
-        paused = !paused;
     })
 
+    sliderLine.addEventListener('touchstart', function (e) {
+        // activeSlide = document.querySelector('.slideActive');
+        progress = document.querySelector('.progress');
+        progress.style.animationPlayState = 'paused';
+
+})
+    sliderLine.addEventListener('touchend', function (e) {
+        // activeSlide = document.querySelector('.slideActive');
+        progress = document.querySelector('.progress');
+        progress.style.animationPlayState = 'running';
+    })
+sliderContainer.addEventListener('touchstart', handleTouchStart);
+console.log('touchstart');
+    function handleTouchStart (e) {
+        const touchStart = e.touches[0];
+        x1 = touchStart.clientX;
+        y1 = touchStart.clientY;
+    }
+
+    sliderContainer.addEventListener('touchmove', handleTouchMove);
+    console.log('touchmove');
+    function handleTouchMove(e) {
+        const touchMove = e.touches[0];
+        let x2 = touchMove.clientX;
+        let y2 = touchMove.clientY;
+        if (!x1 || !y1) {
+            return false;
+        }
+        let xDiff = x2 - x1;
+        let yDiff = y2 - y1;
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                switchCouruselToRight();
+            } else {
+                switchCouruselToLeft();
+            }
+        }
+        x1 = null;
+        y1 = null;
+    }
     
     const nextSlide = () => {
         if (position < (sliderIndiсators.length - 1) * 480) {
@@ -109,7 +112,8 @@ const slideActive = (index) => {
             indicatorIndex = 0;
         }
         sliderLine.style.left = -position + 'px';
-        slideActive(indicatorIndex);
+        // sliderIndiсators[indicatorIndex].firstElementChild.style.width = 0;
+        // slideActive(indicatorIndex);
     }
     
         
@@ -122,32 +126,33 @@ const slideActive = (index) => {
             indicatorIndex = sliderIndiсators.length - 1;
         }
         sliderLine.style.left = -position + 'px';
-        indicatorOfSlide(indicatorIndex);
     }
     
-    rightArrow.addEventListener('click', nextSlide);
-    leftArrow.addEventListener('click', prevSlide);
-let seconds = 5000;
+    function switchCouruselToRight () {
+        console.log(indicatorIndex + 'до перелистывания');
+        nextSlide()
+        console.log(indicatorIndex + "после перелистывания");
+        if (indicatorIndex === 0) {
+            sliderIndiсators[indicatorIndex + 2].firstElementChild.classList.remove('progress');
+        } else {
+        sliderIndiсators[indicatorIndex - 1].firstElementChild.classList.remove('progress');
+    }
+    sliderIndiсators[indicatorIndex].firstElementChild.classList.add('progress');
+    }
 
-// let counterSeconds = setInterval(() => {
-//     if (seconds === 0){
-//         seconds = 5000;
-//     }
-//     if (!paused) {
-//         seconds -= 1000;
-//     }
-// }, 1000);
-// setInterval(() => {
-//     if (seconds === 0){
-//         seconds = 5000;
-//     }
-//     if (!paused) {
-//         seconds -= 1000;
-//     }
-// }, 1000);
-    
-    // setInterval(() => {
-    //     nextSlide()
-    // }, 5000);
+    function switchCouruselToLeft (){
+        console.log(indicatorIndex + 'до перелистывания');
+        prevSlide();
+        console.log(indicatorIndex + "после перелистывания");
+        if (indicatorIndex === 2) {
+            sliderIndiсators[indicatorIndex - 2].firstElementChild.classList.remove('progress');
+        } else {
+            sliderIndiсators[indicatorIndex + 1].firstElementChild.classList.remove('progress');
+        }
+        sliderIndiсators[indicatorIndex].firstElementChild.classList.add('progress');
+    }
+
+    rightArrow.addEventListener('click', switchCouruselToRight);
+    leftArrow.addEventListener('click', switchCouruselToLeft);
+
 })
-// e.target.tagName
