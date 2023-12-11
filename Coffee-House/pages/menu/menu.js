@@ -896,6 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let modalButton of modalButtons1) {
       modalButton.classList.remove('modal__button_active');
     }
+    indicRosePrice300 = 0;
       modalButtonInitial.classList.add('modal__button_active');
     }
     
@@ -913,18 +914,18 @@ document.addEventListener("DOMContentLoaded", function () {
       target = target.closest('.modal__button1');
     }
     target.classList.add('modal__button_active');
-    // for (let modalButtonVolume of modalButtonVolumes) {
-    //   if (modalButtonVolume.innerHTML == "300ml") {
-    //     if (!indicRosePrice300) {
-    //       let initialPrice = modalPrice.innerHTML.split('').splice(1, 4).join('');
-    //       let price = 0.5 + (+initialPrice);
-    //       modalPrice.innerHTML = '$' + price;
-    //       indicRosePrice300 = 1;
+    for (let modalButtonVolume of modalButtonVolumes) {
+      if (modalButtonVolume.innerHTML == "300ml") {
+        if (!indicRosePrice300) {
+          let initialPrice = modalPrice.innerHTML.split('').splice(1, 4).join('');
+          let price = 0.5 + (+initialPrice);
+          modalPrice.innerHTML = '$' + price;
+          indicRosePrice300 = 1;
     //       // indicRosePrice400 = 0
     //       console.log(price);
-    //     }
-    //   }
-    // }
+        }
+      }
+    }
 
 
   }
