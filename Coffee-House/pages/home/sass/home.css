@@ -1305,7 +1305,7 @@ h4 {
   }
 }
 
-.overflow__on {
+.overlay__on {
   margin: 0 auto;
   position: fixed;
   height: 100vh;
