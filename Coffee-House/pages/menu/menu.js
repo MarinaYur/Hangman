@@ -735,7 +735,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
     const overflow = document.querySelector('.overflow');
     const modalClose = document.querySelector('.modal__close');
-    
+    const modaltitle = document.querySelector('.modal__title');
+    const modalDescription = document.querySelector('.modal__description');
+    const modalPrice = document.querySelector('modal__price');
+    const modalImg = document.querySelector('modal__img');
     // const overflow = document.querySelector('.overflow');
     
 
@@ -829,11 +832,11 @@ function fillingActiveTab () {
     teaDescription.innerHTML = tea.description;
     teaPrice.innerHTML = tea.price;
     menuCards.append(card);
+    card.addEventListener('click',callModal);
     (teaArray.length > 4) ? refresh.style.display = 'block' : refresh.style.display = 'none';;
     // switcher = false;
 });
 teaArray.splice(0, teaArray.length);
-console.log('menuCards ', menuCards);
 }
 
 function loadingMoreProducts () {
@@ -856,12 +859,31 @@ function loadingMoreProducts () {
     // refresh.style.display = 'block';
 // }
 function callModal (e) {
-  console.log(e.target);
+  // console.log(e.target.closest('.card'));
   // console.log(modal);
+  let productName = '';
+  let target = e.target.closest('.card');
   modal.style.display = 'flex';
   overflow.classList.toggle('overflow__on');
   body.classList.toggle('active__body');
+  for (let i = 0; i < target.children.length; i++) {
+    console.log(target.children[i]);
+    if (target.children[i].classList.contains('productName')) {
+      productName = target.children[i].innerHTML;
+    }
+  }
+  modaltitle.innerHTML = productName;
+  products.forEach(product => {
+    if (product.name === productName) {
+// console.log(modalPrice.lastChild.innerHTM);
+      modalDescription.innerHTML = product.description;
 
+      // modalPrice.lastChild.innerHTML = '$' + product.price;
+      // modalImg
+    }
+
+  })
+  // modalDescription.innerHTML = products;
 }
 function closingModal () {
   modal.style.display = 'none';
