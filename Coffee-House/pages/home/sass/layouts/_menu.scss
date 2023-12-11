@@ -16,6 +16,7 @@
     }
 }
 .overflow__on {
+    margin: 0 auto;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -30,8 +31,6 @@
 
 .modal {
     position: absolute;
-    top: 25%;
-    left: 25%;
     display: none;
     justify-content: space-between;
     gap: 20px;
@@ -39,6 +38,15 @@
     padding: 16px;
     border-radius: 40px;
     background:  #E1D4C9;
+    @include media-tablet {
+        max-width: 688px;
+    }
+    @include media-mobile1 {
+        max-width: 342px;
+    }
+    @include media-mobile {
+        max-width: 342px;
+    }
 }
 .modal__left {
     display: flex;
@@ -52,7 +60,15 @@
     width: 75%;
     height: 310px;
     border-radius: 40px;
-
+    @include media-tablet {
+        width: 117%;
+    }
+    @include media-mobile1 {
+        display: none;
+    }
+    @include media-mobile {
+        display: none;
+    }
         img {
             max-width: 340px;
     height: 340px;
