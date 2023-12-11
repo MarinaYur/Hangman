@@ -1304,7 +1304,7 @@ h4 {
   }
 }
 
-.menuTeaCards {
+.menuCards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1318,21 +1318,21 @@ h4 {
 }
 
 @media screen and (max-width: 768px) and (min-width: 662px) {
-  .menuTeaCards {
+  .menuCards {
     padding: 0 13px 41px 13px;
     gap: calc(32px + 1vw);
   }
 }
 
 @media screen and (max-width: 661px) and (min-width: 381px) {
-  .menuTeaCards {
+  .menuCards {
     gap: calc(36px + 1vw);
     padding-bottom: 42px;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .menuTeaCards {
+  .menuCards {
     gap: calc(36px + 1vw);
     padding-bottom: 42px;
   }
@@ -1343,9 +1343,7 @@ h4 {
 }
 
 .menuCoffee__cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;

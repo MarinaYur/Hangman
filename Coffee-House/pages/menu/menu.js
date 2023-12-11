@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
           "price": "7.00",
           "category": "coffee",
+          "img": "../../assets/coffee-1.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
           "price": "7.00",
           "category": "coffee",
+          "img": "../../assets/coffee-2.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Espresso with frothed milk, cream and aromatic honey",
           "price": "5.50",
           "category": "coffee",
+          "img": "../../assets/coffee-3.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -113,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Cappuccino with soft thick foam in summer version with ice",
           "price": "5.00",
           "category": "coffee",
+          "img": "../../assets/coffee-4.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -148,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Classic black coffee",
           "price": "4.50",
           "category": "coffee",
+          "img": "../../assets/coffee-5.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -183,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Espresso coffee with the addition of steamed milk and dense milk foam",
           "price": "5.50",
           "category": "coffee",
+          "img": "../../assets/coffee-6.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -218,6 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Espresso with frothed milk and chocolate",
           "price": "5.50",
           "category": "coffee",
+          "img": "../../assets/coffee-7.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -253,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Fragrant black coffee with cognac and whipped cream",
           "price": "6.50",
           "category": "coffee",
+          "img": "../../assets/coffee-8.jpg",
           "sizes": {
             "s": {
               "size": "200 ml",
@@ -432,6 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
           "price": "3.50",
           "category": "dessert",
+          "img": "../../assets/dessert-1.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -467,6 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Layer cake with cream cheese frosting",
           "price": "4.00",
           "category": "dessert",
+          "img": "../../assets/dessert-2.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -502,6 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
           "price": "4.50",
           "category": "dessert",
+          "img": "../../assets/dessert-3.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -537,6 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Delicate creamy dessert in a caramel basket with wild berries",
           "price": "4.00",
           "category": "dessert",
+          "img": "../../assets/dessert-4.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -572,6 +584,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Tender pancakes with strawberry jam and fresh strawberries",
           "price": "4.50",
           "category": "dessert",
+          "img": "../../assets/dessert-5.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -607,6 +620,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Classic honey cake with delicate custard",
           "price": "4.50",
           "category": "dessert",
+          "img": "../../assets/dessert-6.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -642,6 +656,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "Cake with hot chocolate filling and nuts with dried apricots",
           "price": "5.50",
           "category": "dessert",
+          "img": "../../assets/dessert-7.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -677,6 +692,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "description": "A combination of thin sponge cake with cherry jam and light chocolate mousse",
           "price": "6.50",
           "category": "dessert",
+          "img": "../../assets/dessert-8.png",
           "sizes": {
             "s": {
               "size": "50 g",
@@ -707,10 +723,13 @@ document.addEventListener("DOMContentLoaded", function () {
           ]
         }
       ];
-    
+    console.log(products[0]);
     const menuTabs = document.querySelector('.menu__tabs');
+    // let menuCards = document.querySelector('menuCards');
+    // console.log(menuCards===null);
     let teaArray = [];
     let switcher = true;
+    let menuCards = document.querySelector('.menuCards');
 
 
     // let promise = fetch('./../../pages/menu/api/products.json');
@@ -750,22 +769,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //create tea  menu
-    console.log('products ' + products);
 function choiceTabMenu(target) {
     let activeMenu = target.dataset.tab;
-    console.log('activeMenu ' + activeMenu);
-    console.log('products ' + products);
+
     products.forEach(productPosition => {
-       
-        if (productPosition.category == "tea") {
+       console.log('productPosition.category ' + productPosition.category)
+        if (productPosition.category == activeMenu) {
              
             teaArray.push(productPosition);
             // productName.innerHTML = productPosition.name;
-            console.log('productPosition ' + productPosition);
+            ;
     }
 })
-    if (target.dataset.tab == activeMenu && target.classList.contains('tab_active') && switcher) {
-        console.log('Array ' + teaArray);
+    if (switcher) {
         fillingActiveTab(teaArray);
     }
 }
@@ -773,18 +789,14 @@ function choiceTabMenu(target) {
     
 
 function fillingActiveTab () {
-    let menuTeaCards = document.createElement('div');
-    menuTeaCards.classList.add('menuTeaCards');
-    menuTabs.after(menuTeaCards);
-    // if (!switcher){
-    //    return;
-    // } else {
-    //     switcher = !switcher;
+        while (menuCards.firstChild) {
+            menuCards.removeChild(menuCards.firstChild);
+    }
+
     teaArray.forEach(tea => {
-        
     let card = document.createElement('div');
     card.classList.add('card');
-    menuTeaCards.append(card);
+    menuCards.append(card);
     let cardImage = document.createElement('div');
     cardImage.classList.add('card__image');
     card.append(cardImage);
@@ -808,12 +820,11 @@ function fillingActiveTab () {
     productName.innerHTML = tea.name;
     teaDescription.innerHTML = tea.description;
     teaPrice.innerHTML = tea.price;
-    menuTeaCards.append(card);
-    switcher = false;
+    menuCards.append(card);
+    // switcher = false;
 });
-// }
+teaArray.splice(0, teaArray.length);
+console.log('menuCards ', menuCards);
 
-// }
-
-
-}})
+}
+})
