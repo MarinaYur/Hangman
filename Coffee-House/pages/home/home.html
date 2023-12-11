@@ -9,37 +9,38 @@
     <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
     <link rel="stylesheet" href="./sass/home.css" type="text/css">
     <link type="image/x-icon" href="../../assets/favicon.ico" rel="shortcut icon">
+    <script defer type="module" src="./home.js"></script>
+    <script defer type="module" src="./common.js"></script>
 </head>
 
-<body>
+<body class="">
     <header class="header">
-        <div class="wrapper">
+        <div class="wrapper wrapper__header">
             <div class="header-container">
                 <div class="logo">
                     <a class="logoHome" href="#">
                         <img src="../../assets/logo.png" alt="logo">
                     </a>
                 </div>
-                <nav class="header__nav">
+                <nav class="header__nav" id="header__nav">
                     <ul class="navList">
                         <li><a class="link" href="#favouritesCoffee">Favorite coffee</a></li>
                         <li><a class="link" href="#about">About</a></li>
                         <li><a class="link" href="#mobileApp">Mobile app</a></li>
                         <li><a class="link" href="#footer">Contact us</a></li>
                     </ul>
-                    <div class="header__menubtn">
+                    <div class="header__menubtn" id="header__menubtn">
                         <a class="link" href="../menu/menu.html">
-                           <p> Menu</p>
-                            <img src="../../assets/coffee-cup.svg" alt="coffee-cup">
+                            <p> Menu</p>
+                            <img class="coffeeCupD" src="../../assets/coffee-cup.svg" alt="coffee-cup">
+                            <img class="coffeeCupT" src="../../assets/coffee-cupT.png" alt="coffee-cup">
                         </a>
                     </div>
-                    
                 </nav>
-                <div class="hamburger">
-                    <a class="linkToMenuOnHamburger" href="../menu/menu.html">
+                <div class="hamburger" id="hamburger">
+                    <span class="hamburgerSpan1"></span>
                     <span></span>
-                    <span></span>
-                </a>
+                    </a>
                 </div>
             </div>
         </div>
@@ -48,6 +49,9 @@
         <section class="enjoy">
             <div class="wrapper enjoy__wrapper">
                 <div class="enjoy__content layout-2-column">
+                    <video autoplay muted loop class="enjoyVideo" id="enjoyVideo">
+                        <source src="../../assets/video (2160p).mp4" type="video/mp4">
+                    </video>
                     <div class="enjoy__left">
                         <h1><span> Enjoy </span>premium coffee at our charming cafe</h1>
                         <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a
@@ -81,7 +85,6 @@
                             </a>
                         </div>
                     </div>
-                    <div></div>
                 </div>
             </div>
         </section>
@@ -98,18 +101,19 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="slider__container">
-                            <div class="coffee-slide1 slide">
-                                <img src="../../assets/coffee-slider-1.png" alt="coffee-slider-1">
-                                
+                        <div class="slider__container" id="slider__container">
+                            <div class="slider__line">
+                            <div class="coffee-slide1 slide slideActive">
+                                <img id="slideImg" src="../../assets/coffee-slider-1.png" alt="coffee-slider-1">
+
                                 <h4>S’mores Frappuccino</h4>
                                 <p class="slide__description">This new drink takes an espresso and mixes it with
                                     brown<br> sugar and
                                     cinnamon before being topped with oat milk.</p>
                                 <p class="slide__price">$5.50</p>
                             </div>
-                            <!-- <div class="coffee-slide2 slide">
-                                <img src="../../coffee-slider-2.png" alt="coffee-slider-2">
+                            <div class="coffee-slide2 slide">
+                                <img src="../../assets/coffee-slider-2.png" alt="coffee-slider-2">
                                 <h4>Caramel Macchiato</h4>
                                 <p class="slide__description">Fragrant and unique classic espresso with rich
                                     caramel-peanut <br>
@@ -123,9 +127,9 @@
                                     Prepared <br>
                                     from coffee, milk and ice.</p>
                                 <p class="slide__price">$4.50</p>
-                            </div> -->
-                        </div>
-                    
+                            </div>
+                        </div></div>
+
                         <button class="slider__rightArrow slider__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -135,11 +139,18 @@
                         </button>
                     </div>
                     <div class="slider__indiсators">
-                        <div class="indiсator indiсator_active indiсator1"></div>
-                        <div class="indiсator indiсator2"></div>
-                        <div class="indiсator indiсator3"></div>
+                        <div class="indiсator indiсator_active indiсator1" data-index="0">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="indiсator indiсator2" data-index="1">
+                            <div class=""></div>
+                        </div>
+                        <div class="indiсator indiсator3" data-index="2">
+                            <div class=""></div>
+                        </div>
+                    </div>
                 </div>
-            </div></div>
+            </div>
         </section>
         <section id="about" class="about">
             <div class="wrapper about__wrapper">
@@ -223,7 +234,8 @@
                 <div class="footer__sir">
                     <h2>
                         Sip, Savor, Smile. <br>
-                    <span class="itscoffee">It’s coffee time!</span></h2>
+                        <span class="itscoffee">It’s coffee time!</span>
+                    </h2>
                     <ul class="footer__contacts">
                         <li>
                             <a href="#">
@@ -264,12 +276,14 @@
                     <p>Contact us</p>
                     <div class="contactUs">
                         <span>
-                        <a href="https://maps.app.goo.gl/zGxhH6ik6f9Ze6UM6" target="_blank">
-                            <img class="icon icon_location" src="../../assets/place.png" alt="location">8558 Green Rd.,
-                            LA</a></span>
-                            <span>
-                        <a href="tel:+1(603)555-0123"><img class="icon icon_phone" src="../../assets/phone.png" alt="phone">
-                            +1 (603) 555-0123</a></span>
+                            <a href="https://maps.app.goo.gl/zGxhH6ik6f9Ze6UM6" target="_blank">
+                                <img class="icon icon_location" src="../../assets/place.png" alt="location">8558 Green
+                                Rd.,
+                                LA</a></span>
+                        <span>
+                            <a href="tel:+1(603)555-0123"><img class="icon icon_phone" src="../../assets/phone.png"
+                                    alt="phone">
+                                +1 (603) 555-0123</a></span>
                         <span><img class="icon icon_clock" src="../../assets/clock.png" alt="clock">
                             Mon-Sat: 9:00 AM - 23:00 PM</span>
                     </div>

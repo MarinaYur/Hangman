@@ -19,10 +19,16 @@ html {
 }
 
 body {
+    position: relative;
     background-color: $color-background;
     margin: auto;
     @include font (1.6rem, 150%, 600, normal);
-    
+}
+
+
+.active__body {
+    background-color: rgba(64, 63, 61, 0.80);
+    overflow: hidden;
 }
 
 h1 {

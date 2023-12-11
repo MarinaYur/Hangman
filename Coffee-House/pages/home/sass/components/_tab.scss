@@ -10,7 +10,7 @@
     transition: 0.5s linear;
 
     @media (hover:hover) {
-        cursor: pointer;
+        // cursor: pointer;
         &:hover {
         background-color: $color-backgroundFooter;
 
@@ -52,4 +52,7 @@
 .tab_active {
     cursor: default;
     background-color: $color-backgroundFooter;
+    span {
+        color: $color-light;
+    }
 }
