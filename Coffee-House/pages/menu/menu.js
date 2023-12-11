@@ -733,13 +733,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let switcher = true;
     let menuCards = document.querySelector('.menuCards');
     const body = document.body;
-    const overflow = document.querySelector('.overflow');
+    const overlay = document.querySelector('.overlay');
     const modalClose = document.querySelector('.modal__close');
     const modaltitle = document.querySelector('.modal__title');
     const modalDescription = document.querySelector('.modal__description');
     const modalPrice = document.querySelector('.price');
     const modalImg = document.querySelector('.modal__img');
-    // const overflow = document.querySelector('.overflow');
+    // const modal = document.querySelector('.modal');
+    // const overlay = document.querySelector('.overlay');
     
 
 
@@ -749,14 +750,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Menu page
     const tabsCollection = document.querySelectorAll('.tab');
 
-    // const clickHandler = function (e) {
-    //     let tab = e.target;
-    //     if (!tab.classList.contains('tab')) {
-    //         tab =  tab.closest('.tab');
-    //     }
-    //     let tabName = tab.dataset.tab;
-    //     console.log("i clicked " + tabName);
-    // }
 
     const changeActiveTab = function (e) {
         let target = e.target;
@@ -779,7 +772,7 @@ document.addEventListener("DOMContentLoaded", function () {
       card.addEventListener('click', callModal);
   }
   modalClose.addEventListener('click', closingModal);
-  overflow.addEventListener('click',closingModal);
+  overlay.addEventListener('click',closingModal);
 
     //create tea  menu
 function choiceTabMenu(target) {
@@ -864,7 +857,7 @@ function callModal (e) {
   let productName = '';
   let target = e.target.closest('.card');
   modal.style.display = 'flex';
-  overflow.classList.toggle('overflow__on');
+  overlay.classList.toggle('overlay__on');
   body.classList.toggle('active__body');
   for (let i = 0; i < target.children.length; i++) {
     console.log(target.children[i]);
@@ -886,9 +879,12 @@ console.log(modalImg);
   // modalDescription.innerHTML = products;
 }
 function closingModal (e) {
-  console.log(e.target)
+  console.log(e.target.firstElementChild === modal);
+  // if (e.target.closest('.modal__close')){
+    if (e.target.closest('.modal__close') || e.target.firstElementChild === modal) {
   modal.style.display = 'none';
-  overflow.classList.remove('overflow__on');
+  overlay.classList.remove('overlay__on');
   body.classList.remove('active__body');
+}
 }
 })
