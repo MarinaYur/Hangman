@@ -723,13 +723,21 @@ document.addEventListener("DOMContentLoaded", function () {
           ]
         }
       ];
-    console.log(products[0]);
     const menuTabs = document.querySelector('.menu__tabs');
-    // let menuCards = document.querySelector('menuCards');
-    // console.log(menuCards===null);
+    const refresh = document.querySelector('.refresh');
+    const windowInnerWidth = document.documentElement.clientWidth;
+    const windowInnerHeight = document.documentElement.clientHeight;
+    const cards = document.querySelectorAll('.card');
+    const modal = document.querySelector('.modal');
     let teaArray = [];
     let switcher = true;
     let menuCards = document.querySelector('.menuCards');
+    const body = document.body;
+    const overflow = document.querySelector('.overflow');
+    const modalClose = document.querySelector('.modal__close');
+    
+    // const overflow = document.querySelector('.overflow');
+    
 
 
     // let promise = fetch('./../../pages/menu/api/products.json');
@@ -762,11 +770,13 @@ document.addEventListener("DOMContentLoaded", function () {
     
     for (let tab of tabsCollection) {
         tab.addEventListener('click', changeActiveTab);
-        // tab.addEventListener('click', choiceTabMenu);
-        // console.log(e.target.classList);
     }
-
-
+    refresh.addEventListener('click', loadingMoreProducts);
+    for (let card of cards) {
+      card.addEventListener('click', callModal);
+  }
+  modalClose.addEventListener('click', closingModal);
+  overflow.addEventListener('click',closingModal);
 
     //create tea  menu
 function choiceTabMenu(target) {
@@ -785,8 +795,6 @@ function choiceTabMenu(target) {
         fillingActiveTab(teaArray);
     }
 }
-
-    
 
 function fillingActiveTab () {
         while (menuCards.firstChild) {
@@ -821,10 +829,43 @@ function fillingActiveTab () {
     teaDescription.innerHTML = tea.description;
     teaPrice.innerHTML = tea.price;
     menuCards.append(card);
+    (teaArray.length > 4) ? refresh.style.display = 'block' : refresh.style.display = 'none';;
     // switcher = false;
 });
 teaArray.splice(0, teaArray.length);
 console.log('menuCards ', menuCards);
+}
 
+function loadingMoreProducts () {
+    let changeWidth = windowInnerWidth;
+    const cards = document.querySelectorAll('.card');
+    for (let card of cards) {
+        card.style.display = 'block';
+    }
+    refresh.style.display = 'none';
+}
+// window.addEventListener('resize', changeScreenWidth);
+// function changeScreenWidth () {
+//    console.log(cards[5])
+//    for (let card of cards) {
+//     card.style.display = 'none';
+//    }
+    // cards[6].style.display = 'none';
+    // cards[7].style.display = 'none';
+    // cards[4].style.display = 'none';
+    // refresh.style.display = 'block';
+// }
+function callModal (e) {
+  console.log(e.target);
+  // console.log(modal);
+  modal.style.display = 'flex';
+  overflow.classList.toggle('overflow__on');
+  body.classList.toggle('active__body');
+
+}
+function closingModal () {
+  modal.style.display = 'none';
+  overflow.classList.toggle('overflow__on');
+  body.classList.toggle('active__body');
 }
 })
