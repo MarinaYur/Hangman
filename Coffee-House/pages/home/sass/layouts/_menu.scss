@@ -15,13 +15,39 @@
         padding-bottom: 39px;
     }
 }
-
-.menuCoffee__cards {
+.menuTeaCards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     padding-bottom: 101px;
+
+
+    @include media-tablet {
+        padding: 0 13px 41px 13px;
+        gap: calc(32px + 1vw);
+    }
+
+    @include media-mobile {
+        gap: calc(36px + 1vw);
+        padding-bottom: 42px;
+    }
+    @include media-mobile1 {
+        gap: calc(36px + 1vw);
+        padding-bottom: 42px;
+    }
+}
+.productName {
+    padding: 21px 0 0 20px;
+}
+.menuCoffee__cards {
+    // display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 101px;
+   
 
 
     @include media-tablet {
@@ -53,7 +79,7 @@
 
 }
 
-.coffeeDescription {
+.coffeeDescription, .teaDescription {
     @include font (1.6rem, 150%, 400, normal);
 }
 

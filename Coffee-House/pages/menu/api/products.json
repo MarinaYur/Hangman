@@ -278,12 +278,12 @@
         }
       ]
     },
-  
     {
       "name": "Moroccan",
       "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
       "price": "4.50",
       "category": "tea",
+      "img": "../../../assets/tea-1tea1.png",
       "sizes": {
         "s": {
           "size": "200 ml",

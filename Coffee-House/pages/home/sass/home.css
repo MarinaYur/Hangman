@@ -188,7 +188,7 @@ h4 {
             flex-direction: column;
     max-width: 768px;
     width: 100%;
-    height: 928px;
+    height: 100%;
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
@@ -218,7 +218,7 @@ h4 {
             flex-direction: column;
     max-width: 768px;
     width: 100%;
-    height: 928px;
+    height: 100%;
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
@@ -248,7 +248,7 @@ h4 {
             flex-direction: column;
     max-width: 768px;
     width: 100%;
-    height: 928px;
+    height: 100%;
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
@@ -1304,6 +1304,44 @@ h4 {
   }
 }
 
+.menuTeaCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  padding-bottom: 101px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 662px) {
+  .menuTeaCards {
+    padding: 0 13px 41px 13px;
+    gap: calc(32px + 1vw);
+  }
+}
+
+@media screen and (max-width: 661px) and (min-width: 381px) {
+  .menuTeaCards {
+    gap: calc(36px + 1vw);
+    padding-bottom: 42px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .menuTeaCards {
+    gap: calc(36px + 1vw);
+    padding-bottom: 42px;
+  }
+}
+
+.productName {
+  padding: 21px 0 0 20px;
+}
+
 .menuCoffee__cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1356,7 +1394,7 @@ h4 {
   }
 }
 
-.coffeeDescription {
+.coffeeDescription, .teaDescription {
   font-family: 'Inter', 'Verdana', sans-serif;
   font-size: 1.6rem;
   font-style: normal;

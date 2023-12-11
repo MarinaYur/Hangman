@@ -10,27 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderContainer = document.querySelector('.slider__container');
     const slide = document.querySelector('.slide');
     const body = document.body;
-    let getWidthOfSlide = slide?.clientWidth;
+    let getWidthOfSlide = slide.clientWidth;
     let position = 0;
     let indicatorIndex = 0;
     
     let x1 = null;
     let y1 = null;
-
-
-
-    //hamburger
-    document.getElementById("hamburger").addEventListener("click", function (e) {
-        console.log('e.target.className проверка');
-        headerContainer.classList.toggle("open__menu");
-        body.classList.toggle('active__body');
-    })
-    document.getElementById("header__nav").addEventListener("click", function (e) {
-        // console.log(e.target.className)
-        if (e.target.matches('.link') || e.target.matches('.header__menubtn') || e.target.matches('.coffeeCupT')) {
-            headerContainer.classList.toggle("open__menu")
-        }
-    })
 
     //carousel
 
@@ -40,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = parseInt(e.target.parentElement.dataset.index);
         indicatorIndex = index;
 
-        for (indicator of sliderIndiсators) {
+        for (let indicator of sliderIndiсators) {
             indicator.firstElementChild.classList.remove('progress');
         }
         if (index === sliderIndiсators.length - 1) {
@@ -55,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('animationend', animationEndListener);
 
     sliderLine.addEventListener('mouseenter', function (e) {
-        progress = document.querySelector('.progress');
+        let progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'paused';
 
     })
     sliderLine.addEventListener('mouseleave', function (e) {
-        progress = document.querySelector('.progress');
+        let progress = document.querySelector('.progress');
         progress.style.animationPlayState = 'running';
     })
 
