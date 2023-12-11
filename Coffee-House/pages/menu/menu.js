@@ -737,8 +737,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalClose = document.querySelector('.modal__close');
     const modaltitle = document.querySelector('.modal__title');
     const modalDescription = document.querySelector('.modal__description');
-    const modalPrice = document.querySelector('modal__price');
-    const modalImg = document.querySelector('modal__img');
+    const modalPrice = document.querySelector('.price');
+    const modalImg = document.querySelector('.modal__img');
     // const overflow = document.querySelector('.overflow');
     
 
@@ -875,19 +875,20 @@ function callModal (e) {
   modaltitle.innerHTML = productName;
   products.forEach(product => {
     if (product.name === productName) {
-// console.log(modalPrice.lastChild.innerHTM);
+// 
       modalDescription.innerHTML = product.description;
-
-      // modalPrice.lastChild.innerHTML = '$' + product.price;
-      // modalImg
+console.log(modalImg);
+      modalPrice.innerHTML = '$' + product.price;
+      modalImg.setAttribute('src', product.img);
     }
 
   })
   // modalDescription.innerHTML = products;
 }
-function closingModal () {
+function closingModal (e) {
+  console.log(e.target)
   modal.style.display = 'none';
-  overflow.classList.toggle('overflow__on');
-  body.classList.toggle('active__body');
+  overflow.classList.remove('overflow__on');
+  body.classList.remove('active__body');
 }
 })
