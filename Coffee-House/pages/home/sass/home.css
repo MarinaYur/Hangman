@@ -1420,7 +1420,7 @@ h4 {
   gap: 8px;
 }
 
-.modal__button {
+.modal__button1, .modal__button2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
