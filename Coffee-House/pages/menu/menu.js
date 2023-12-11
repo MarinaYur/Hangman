@@ -899,8 +899,6 @@ document.addEventListener("DOMContentLoaded", function () {
     indicRosePrice300 = 0;
       modalButtonInitial.classList.add('modal__button_active');
     }
-    
-    
   }
 
   function chooseSize(e) {
