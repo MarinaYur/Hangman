@@ -923,20 +923,20 @@ document.addEventListener("DOMContentLoaded", function () {
       body.classList.remove('active__body');
       for (let modalButton of modalButtons1) {
         modalButton.classList.remove('modal__button_active');
+        for (let modalButton of modalButtons2) {
+          modalButton.classList.remove('modal__button_active');
+        }
       }
-      indicRosePrice300 = 0;
       modalButtonInitial.classList.add('modal__button_active');
     }
+
   }
 
   function chooseSize(e) {
-    // console.log(e.target.closest('.modal__button_active'));
     let target = e.target;
     let productName = modaltitle.innerHTML;
 
     for (let modalButton of modalButtons1) {
-
-      // console.log('target', modalButton.lastElementChild);
       modalButton.classList.remove('modal__button_active');
     }
     if (!target.classList.contains('modal__button1')) {
@@ -959,25 +959,31 @@ document.addEventListener("DOMContentLoaded", function () {
           // console.log(+product.sizes.s["add-price"]);
           modalPrice.innerHTML = '$' + (+ product.price + (+ product.sizes.l["add-price"])).toFixed(2);
         }
-      
-      }})
-    }
-    function chooseAdditives (e) {
-      let target = e.target;
-      let productName = modaltitle.innerHTML;
-    
 
-    for (let modalButton of modalButtons2) {
+      }
+    })
+  }
+  function chooseAdditives(e) {
+    let target = e.target;
+    let productName = modaltitle.innerHTML;
 
-      // console.log('target', modalButton.lastElementChild);
-      // modalButton.classList.remove('modal__button_active');
-    }
     if (!target.classList.contains('modal__button2')) {
       target = target.closest('.modal__button2');
     }
     target.classList.toggle('modal__button_active');
+    if (target.classList.contains('modal__button_active')) {
+      console.log('modalPrice.innerHTML1', modalPrice.innerHTML);
+      let price = +(+modalPrice.innerHTML.split('').splice(1).join('') + 0.5);
+      console.log('modalPrice.innerHTML2, price', modalPrice.innerHTML, typeof modalPrice.innerHTML, typeof price, price);
+      modalPrice.innerHTML = '$' + (+ price);
+      console.log('modalPrice.innerHTML3', typeof modalPrice.innerHTML, modalPrice.innerHTML);
     }
     if (!target.classList.contains('modal__button_active')) {
-      modalPrice.innerHTML = '$' + (+ product.price + 0.5).toFixed(2);
+      console.log('modalPrice.innerHTML1', modalPrice.innerHTML);
+      let price = +modalPrice.innerHTML.split('').splice(1).join('') - 0.5;
+      console.log('modalPrice.innerHTML2, price', typeof modalPrice.innerHTML, typeof price, price);
+      modalPrice.innerHTML = '$' + (+ price);
+      console.log('modalPrice.innerHTML3', modalPrice.innerHTML);
     }
+  }
 })
