@@ -747,6 +747,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalButtonActive = document.querySelectorAll('.modal__button_active');
   const modalButtons2 = document.querySelectorAll('.modal__button2');
   const modalButtonInitial = document.querySelector('.modal__button_initial');
+  const volume = document.querySelectorAll('.modal__button_volume');
+  const additives = document.querySelectorAll('.modal__button2');
+  // let productName = document.querySelector()
 
 
 
@@ -766,7 +769,6 @@ document.addEventListener("DOMContentLoaded", function () {
       target = target.closest('.tab');
     }
     target.classList.add('tab_active');
-    // console.log(target);
     choiceTabMenu(target);
   }
 
@@ -782,6 +784,9 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let modalButton of modalButtons1) {
     modalButton.addEventListener('click', chooseSize);
   }
+  for (let modalButton of modalButtons2) {
+    modalButton.addEventListener('click', chooseAdditives);
+  }
 
 
   //create tea  menu
@@ -793,8 +798,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (productPosition.category == activeMenu) {
 
         teaArray.push(productPosition);
-        // productName.innerHTML = productPosition.name;
-        ;
       }
     })
     if (switcher) {
@@ -815,7 +818,6 @@ document.addEventListener("DOMContentLoaded", function () {
       cardImage.classList.add('card__image');
       card.append(cardImage);
       let img = document.createElement('img');
-      // img.classList.add('');
       cardImage.append(img);
       let productName = document.createElement('h4');
       productName.classList.add('productName');
@@ -862,15 +864,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // refresh.style.display = 'block';
   // }
   function callModal(e) {
-    // console.log(e.target.closest('.card'));
-    // console.log(modal);
     let productName = '';
     let target = e.target.closest('.card');
     modal.style.display = 'flex';
     overlay.classList.toggle('overlay__on');
     body.classList.toggle('active__body');
     for (let i = 0; i < target.children.length; i++) {
-      console.log(target.children[i]);
+      // console.log(target.children[i]);
       if (target.children[i].classList.contains('productName')) {
         productName = target.children[i].innerHTML;
       }
@@ -878,13 +878,41 @@ document.addEventListener("DOMContentLoaded", function () {
     modaltitle.innerHTML = productName;
     products.forEach(product => {
       if (product.name === productName) {
-        // 
         modalDescription.innerHTML = product.description;
-        console.log(modalImg);
+        // console.log(modalImg);
         modalPrice.innerHTML = '$' + product.price;
         modalImg.setAttribute('src', product.img);
-      }
+        let sizes = ["s", "m", "l"];
+        for (let modalButton of modalButtons1) {
+          if (modalButton.firstElementChild.innerHTML === "S") {
+            modalButton.lastElementChild.innerHTML = product.sizes.s.size;
+            // modalButton.lastElementChild.innerHTML = product.sizes.s["add-price"];
+          }
+          if (modalButton.firstElementChild.innerHTML === "M") {
+            modalButton.lastElementChild.innerHTML = product.sizes.m.size;
+            // modalButton.lastElementChild.innerHTML = product.sizes.m["add-price"];
+          }
+          if (modalButton.firstElementChild.innerHTML === "L") {
+            modalButton.lastElementChild.innerHTML = product.sizes.l.size;
+            // modalPrice.innerHTML = '$' + product.price + product.sizes.m["add-price"];
+          }
+        }
 
+        for (let modalButton of modalButtons2) {
+          if (modalButton.firstElementChild.innerHTML == 1) {
+            console.log(modalButton.lastElementChild.innerHTML);
+            modalButton.lastElementChild.innerHTML = product.additives[0].name;
+          }
+          if (modalButton.firstElementChild.innerHTML == 2) {
+            console.log(modalButton.lastElementChild.innerHTML);
+            modalButton.lastElementChild.innerHTML = product.additives[1].name;
+          }
+          if (modalButton.firstElementChild.innerHTML == 3) {
+            console.log(modalButton.lastElementChild.innerHTML);
+            modalButton.lastElementChild.innerHTML = product.additives[2].name;
+          }
+        }
+      }
     })
     // modalDescription.innerHTML = products;
   }
@@ -894,37 +922,62 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.classList.remove('overlay__on');
       body.classList.remove('active__body');
       for (let modalButton of modalButtons1) {
-      modalButton.classList.remove('modal__button_active');
-    }
-    indicRosePrice300 = 0;
+        modalButton.classList.remove('modal__button_active');
+      }
+      indicRosePrice300 = 0;
       modalButtonInitial.classList.add('modal__button_active');
     }
   }
 
   function chooseSize(e) {
-    console.log('choosing size')
+    // console.log(e.target.closest('.modal__button_active'));
     let target = e.target;
+    let productName = modaltitle.innerHTML;
+
     for (let modalButton of modalButtons1) {
-      // console.log('modalButton', modalButton);
+
+      // console.log('target', modalButton.lastElementChild);
       modalButton.classList.remove('modal__button_active');
     }
     if (!target.classList.contains('modal__button1')) {
       target = target.closest('.modal__button1');
     }
     target.classList.add('modal__button_active');
-    for (let modalButtonVolume of modalButtonVolumes) {
-      if (modalButtonVolume.innerHTML == "300ml") {
-        if (!indicRosePrice300) {
-          let initialPrice = modalPrice.innerHTML.split('').splice(1, 4).join('');
-          let price = 0.5 + (+initialPrice);
-          modalPrice.innerHTML = '$' + price;
-          indicRosePrice300 = 1;
-    //       // indicRosePrice400 = 0
-    //       console.log(price);
+    console.log(e.target.closest('.modal__button_active').firstElementChild.innerHTML);
+    products.forEach(product => {
+      if (product.name === productName) {
+        if (e.target.closest('.modal__button_active').firstElementChild.innerHTML === "S") {
+          // console.log(+product.sizes.s["add-price"]);
+          modalPrice.innerHTML = '$' + (+ product.price + (+ product.sizes.s["add-price"])).toFixed(2);
         }
-      }
+
+        if (e.target.closest('.modal__button_active').firstElementChild.innerHTML === "M") {
+          // console.log(+product.sizes.s["add-price"]);
+          modalPrice.innerHTML = '$' + (+ product.price + (+ product.sizes.m["add-price"])).toFixed(2);
+        }
+        if (e.target.closest('.modal__button_active').firstElementChild.innerHTML === "L") {
+          // console.log(+product.sizes.s["add-price"]);
+          modalPrice.innerHTML = '$' + (+ product.price + (+ product.sizes.l["add-price"])).toFixed(2);
+        }
+      
+      }})
     }
+    function chooseAdditives (e) {
+      let target = e.target;
+      let productName = modaltitle.innerHTML;
+    
 
+    for (let modalButton of modalButtons2) {
 
-  }
+      // console.log('target', modalButton.lastElementChild);
+      // modalButton.classList.remove('modal__button_active');
+    }
+    if (!target.classList.contains('modal__button2')) {
+      target = target.closest('.modal__button2');
+    }
+    target.classList.toggle('modal__button_active');
+    }
+    if (!target.classList.contains('modal__button_active')) {
+      modalPrice.innerHTML = '$' + (+ product.price + 0.5).toFixed(2);
+    }
 })

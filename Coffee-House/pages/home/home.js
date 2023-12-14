@@ -113,9 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function switchCouruselToRight() {
-        // console.log(indicatorIndex + 'до перелистывания');
         nextSlide()
-        // console.log(indicatorIndex + "после перелистывания");
         if (indicatorIndex === 0) {
             sliderIndiсators[indicatorIndex + 2].firstElementChild.classList.remove('progress');
         } else {
@@ -125,9 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function switchCouruselToLeft() {
-        // console.log(indicatorIndex + 'до перелистывания');
         prevSlide();
-        // console.log(indicatorIndex + "после перелистывания");
         if (indicatorIndex === 2) {
             sliderIndiсators[indicatorIndex - 2].firstElementChild.classList.remove('progress');
         } else {
