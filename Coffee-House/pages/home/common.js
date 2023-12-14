@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.toggle('active__body');
     })
     document.getElementById("header__nav").addEventListener("click", function (e) {
-        // console.log(e.target.className)
         if (e.target.matches('.link') || e.target.matches('.header__menubtn') || e.target.matches('.coffeeCupT')) {
-            headerContainer.classList.toggle("open__menu")
+            headerContainer.classList.toggle("open__menu");
+            body.classList.toggle('active__body');
         }
     })
 })
