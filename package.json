@@ -1,0 +1,32 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node node_modules/eslint/bin/eslint.js ./hangman.js",
+    "lint:fix": "node node_modules/eslint/bin/eslint.js ./hangman.js --fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/marinayur-JSFE2023Q4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/marinayur-JSFE2023Q4/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/marinayur-JSFE2023Q4#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.2",
+    "husky": "^8.0.0",
+    "prettier": "3.1.1",
+    "prettier-eslint": "^16.2.0"
+  }
+}

@@ -1,0 +1,23 @@
+.main {
+  max-width: 1440px;
+  height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.main-gallows {
+  background-color: blanchedalmond;
+}
+
+.task-part {
+  background-color: bisque;
+  height: 70vh;
+  flex-basis: 70%;
+}
+
+.main-task__wrapper {
+  padding: 40px
+}
