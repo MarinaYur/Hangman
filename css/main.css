@@ -423,16 +423,27 @@ body {
   align-items: center;
 }
 
+.overlay {
+  position: fixed;
+  z-index: 25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(64, 63, 61, 0.8);
+}
+
 .modal {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 29px;
   border-radius: 25px;
   background-color: white;
-  gap: 10px;
+  gap: 35px;
 }
 
 .modal__header {

@@ -1,8 +1,64 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const questionsArr = [
+    {
+      word: 'jupiter',
+      clue: 'The largest planet in the solar system?',
+    },
+    {
+      word: 'mercury',
+      clue: 'the smallest planet in the solar system?' },
+    {
+      word: 'calibri',
+      clue: 'The smallest birds in the world?',
+    },
+    { word: 'cheetah', clue: 'The fastest runner among land animals?' },
+    {
+      word: 'flowerbed',
+      clue: 'What is a plot of land planted with flowers called?',
+    },
+    {
+      word: 'whisper',
+      clue: 'To speak very softly or quietly, often in a secretive manner.',
+    },
+    {
+      word: 'brilliant',
+      clue: 'Exceptionally clever, talented, or impressive.',
+    },
+    {
+      word: 'puzzle',
+      clue: 'A game, toy, or problem designed to test ingenuity or knowledge.',
+    },
+    {
+      word: 'sunflower',
+      clue: 'A tall plant with a large yellow flower head.',
+    },
+    {
+      word: 'volcano',
+      clue: 'A mountain or hill with a vent through which lava, rock fragments, hot vapor, and gas are ejected.',
+    },
+    {
+      word: 'rainbow',
+      clue: 'A meteorological phenomenon that is caused by reflection, refraction, and dispersion of light.',
+    },
+    {
+      word: 'piano',
+      clue: 'A musical instrument played by pressing keys that cause hammers to strike strings.',
+    },
+    {
+      word: 'dance',
+      clue: 'A rhythmic movement of the body often performed to music.',
+    },
+    {
+      word: 'science',
+      clue: 'The systematic study of the structure and behavior of the physical and natural world.',
+    },
+  ];
+
   // create Game Environment, createMainElements
   const { body } = document;
-  let incorrect = 0;
-  let guessedLetters = 0;
+  let incorrect;
+  let guessedLetters;
+  let wordSecret = '';
   const main = document.createElement('main');
   const gallowsPart = document.createElement('div');
   const img = document.createElement('img');
@@ -57,7 +113,22 @@ document.addEventListener('DOMContentLoaded', function () {
   gallowsPartName.innerHTML = 'Hangman game';
   taskPartCount.innerHTML = ` ${incorrect} / 6`;
 
-  // keyboard buttons and add handler of click button event
+  // modal
+  const overlay = document.createElement('div');
+  const modal = document.createElement('div');
+  const modalHeader = document.createElement('h2');
+  const modalSecretWord = document.createElement('p');
+  const modalButton = document.createElement('button');
+
+  modal.classList = 'modal';
+  overlay.classList = 'overlay';
+  modalHeader.classList = 'modal__header';
+  modalSecretWord.classList = 'modal__secret-word';
+  modalButton.classList = 'modal__button';
+
+  modalButton.innerHTML = 'PLAY AGAIN';
+
+  // create keyboard buttons
   for (let i = 0; i < 26; i += 1) {
     const keyboardСharacter = document.createElement('button');
     keyboardСharacter.classList = 'keyboard__character';
@@ -65,23 +136,23 @@ document.addEventListener('DOMContentLoaded', function () {
     keyboardСharacter.innerHTML = String.fromCharCode(i + 97);
   }
 
+  function resetGame() {
+    incorrect = 0;
+    guessedLetters = 0;
+    gallowsPartPersonImg.src = '';
+    taskPartCount.innerHTML = ` ${incorrect} / 6`;
+    overlay.remove();
+    modal.remove();
+    modalHeader.remove();
+    modalSecretWord.remove();
+    modalButton.remove();
+    keyboard
+      .querySelectorAll('button')
+      .forEach((btn) => btn.classList.remove('keyboard__character_clicked'));
+  }
+
   function createModal(resultOfGame, word) {
     const guestsWord = word.toUpperCase();
-    // modal
-    const overlay = document.createElement('div');
-    const modal = document.createElement('div');
-    const modalHeader = document.createElement('h2');
-    const modalSecretWord = document.createElement('p');
-    const modalButton = document.createElement('button');
-
-    modal.classList = 'modal';
-    overlay.classList = 'overlay';
-    modalHeader.classList = 'modal__header';
-    modalSecretWord.classList = 'modal__secret-word';
-    modalButton.classList = 'modal__button';
-
-    modalButton.innerHTML = 'PLAY AGAIN';
-
     body.prepend(overlay);
     overlay.append(modal);
     modal.append(modalHeader);
@@ -97,73 +168,61 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function checkEnteredLetter(word) {
-    keyboard.addEventListener('click', (e) => {
-      const clickedLetter = e.target.innerHTML;
-      if (e.target !== e.currentTarget) {
-        if (word.includes(clickedLetter)) {
-          [...word].forEach((letter, index) => {
-            if (letter === clickedLetter) {
-              // printed guessed lettes
-              secretWord.querySelectorAll('div')[index].innerHTML =
-                clickedLetter;
-              secretWord
-                .querySelectorAll('div')
-                [index].classList.add('secret-word__letter_guessed');
-              guessedLetters += 1;
-            }
-          });
-        } else {
-          incorrect += 1;
-          taskPartCount.innerHTML = ` ${incorrect} / 6`;
-          // appear parts of person when incorrect answer in the logical order (head, body, left arm, right arm, left leg, right leg)
-          gallowsPartPersonImg.src = `./assets/hangman-${incorrect}.svg`;
-        }
-        e.target.classList.add('keyboard__character_clicked');
-        // The clicked/pressed letter is disabled
-        //     e.target.setAttribute('disabled', 'disabled');
-        if (guessedLetters === word.length) {
-          createModal(true, word);
-        }
-        if (incorrect === 6) {
-          createModal(false, word);
-        }
-        console.log(e.target);
+  function checkEnteredLetter(e) {
+    const word = wordSecret;
+    const clickedLetter = e.target.innerHTML;
+    if (e.target !== e.currentTarget) {
+      if (word.includes(clickedLetter)) {
+        [...word].forEach((letter, index) => {
+          if (letter === clickedLetter) {
+            // printed guessed lettes
+            secretWord.querySelectorAll('div')[index].innerHTML = clickedLetter;
+            secretWord
+              .querySelectorAll('div')
+              [index].classList.add('secret-word__letter_guessed');
+            guessedLetters += 1;
+          }
+        });
+      } else {
+        incorrect += 1;
+        taskPartCount.innerHTML = ` ${incorrect} / 6`;
+        // appear parts of person when incorrect answer in the logical order (head, body, left arm, right arm, left leg, right leg)
+        gallowsPartPersonImg.src = `./assets/hangman-${incorrect}.svg`;
       }
-    });
+      e.target.classList.add('keyboard__character_clicked');
+      // The clicked/pressed letter is disabled
+      //     e.target.setAttribute('disabled', 'disabled');
+      if (guessedLetters === word.length) {
+        createModal(true, word);
+      }
+      if (incorrect === 6) {
+        createModal(false, word);
+      }
+    }
   }
 
-  const questionsArr = [
-    {
-      word: 'jupiter',
-      clue: 'The largest planet in the solar system?',
-    },
-    { word: 'mercury', clue: 'the smallest planet in the solar system?' },
-    {
-      word: 'calibri',
-      clue: 'The smallest birds in the world?',
-    },
-    { word: 'cheetah', clue: 'The fastest runner among land animals?' },
-    {
-      word: 'flowerbed',
-      clue: 'What is a plot of land planted with flowers called?',
-    },
-  ];
+  function addListenerOnKeyboardButtons() {
+    resetGame();
+    keyboard.addEventListener('click', checkEnteredLetter);
+  }
+  keyboard.removeEventListener('click', checkEnteredLetter);
 
   function createSecretWord() {
+    secretWord.innerHTML = '';
     const { word, clue } =
       questionsArr[Math.floor(Math.random() * questionsArr.length)];
     taskPartHint.innerHTML = `Hint: ${clue}`;
     taskPartP.innerHTML = 'Incorrect quesses:';
-    console.log(word);
+    wordSecret = word;
+    console.log(wordSecret);
     for (let i = 0; i < word.length; i += 1) {
       const letter = document.createElement('div');
       letter.className = 'secret-word__letter';
       secretWord.append(letter);
     }
-    checkEnteredLetter(word);
+    addListenerOnKeyboardButtons(word);
   }
-
+  modalButton.addEventListener('click', createSecretWord);
   // const questionsObjRu = [
 
   //   Юпитер: 'Самая большая планета Солнечной системы?',
