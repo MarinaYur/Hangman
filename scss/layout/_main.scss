@@ -1,23 +1,57 @@
 .main {
-  max-width: 1440px;
-  height: 70vh;
-  width: 100%;
+  // position: relative;
+  max-width: 835px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  border-radius: 25px;
+  align-items: flex-end;
+  gap: 72px;
+  padding: 40px;
+  background-color: rgba(214, 229, 227, 0.992);
 }
 
-.main-gallows {
-  background-color: blanchedalmond;
+.gallows-part {
+  position: relative;
 }
 
-.task-part {
-  background-color: bisque;
-  height: 70vh;
-  flex-basis: 70%;
+.galows-part__gallows {
+  max-width: 200px;
 }
 
-.main-task__wrapper {
-  padding: 40px
+.galows-part__person {
+  // position: relative;
+}
+// .galows-part__person img {
+//   // position: absolute;
+//   // width: 10px;
+// }
+
+.gallows-part__body {
+
+}
+
+.task-part__count {
+  color: red;
+}
+
+.task-part__hint {
+  font-size: 1.3rem;
+}
+
+.task-part__hint-count {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 72px 0 135px 0;
+}
+
+.galows-part__person {
+  position: absolute;
+  top: 84px;
+  left: 122px;
+  // background-color: antiquewhite;
+  // width: 100px;
+  // height: 100px;
 }

@@ -1,5 +1,27 @@
 .keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.keyboard__character {
   width: 100%;
-  max-width: 1000px;
-  background-color: aqua;
+  max-width: 35px;
+  min-height: 30px;
+  border-radius: 0 8px;
+  color: white;
+  background-color: cadetblue;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.keyboard__character:hover {
+  background-color: rgb(135, 211, 212);
+}
+
+.keyboard__character_clicked {
+  background-color: rgba(159, 196, 197, 0.8);
+  // cursor: auto;
 }
