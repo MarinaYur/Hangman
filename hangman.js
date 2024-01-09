@@ -2,14 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // create Game Environment, createMainElements
   const { body } = document;
   let incorrect = 0;
-  const main = document.createElement('div');
+  let guessedLetters = 0;
+  const main = document.createElement('main');
   const gallowsPart = document.createElement('div');
   const img = document.createElement('img');
   const gallowsPartPerson = document.createElement('div');
   const gallowsPartPersonImg = document.createElement('img');
   const gallowsPartBody = document.createElement('img');
-  // const gallowsPartHandOne = document.createElement('img');
-  // const gallowsPartHandTwo = document.createElement('img');
   const gallowsPartName = document.createElement('h1');
   const mainTaskWrapper = document.createElement('div');
   const taskPart = document.createElement('div');
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   img.alt = 'gallows';
   img.src = './assets/gallows.svg';
-  // gallowsPartPersonImg.src = `./assets/hangman-1.svg`;
 
   body.append(main);
   gallowsPart.append(img);
@@ -67,29 +65,71 @@ document.addEventListener('DOMContentLoaded', function () {
     keyboardСharacter.innerHTML = String.fromCharCode(i + 97);
   }
 
+  function createModal(resultOfGame, word) {
+    const guestsWord = word.toUpperCase();
+    // modal
+    const overlay = document.createElement('div');
+    const modal = document.createElement('div');
+    const modalHeader = document.createElement('h2');
+    const modalSecretWord = document.createElement('p');
+    const modalButton = document.createElement('button');
+
+    modal.classList = 'modal';
+    overlay.classList = 'overlay';
+    modalHeader.classList = 'modal__header';
+    modalSecretWord.classList = 'modal__secret-word';
+    modalButton.classList = 'modal__button';
+
+    modalButton.innerHTML = 'PLAY AGAIN';
+
+    body.prepend(overlay);
+    overlay.append(modal);
+    modal.append(modalHeader);
+    modal.append(modalSecretWord);
+    modal.append(modalButton);
+
+    if (resultOfGame) {
+      modalHeader.innerHTML = 'You won!';
+      modalSecretWord.innerHTML = `You guessed the secret word: ${guestsWord}!`;
+    } else {
+      modalHeader.innerHTML = 'Uhh, you lost.';
+      modalSecretWord.innerHTML = `Secret word was ${guestsWord}!`;
+    }
+  }
+
   function checkEnteredLetter(word) {
     keyboard.addEventListener('click', (e) => {
-      console.log(e.currentTarget);
       const clickedLetter = e.target.innerHTML;
-      if (word.includes(clickedLetter)) {
-        [...word].forEach((letter, index) => {
-          if (letter === clickedLetter) {
-            // printed guessed lettes
-            secretWord.querySelectorAll('div')[index].innerHTML = clickedLetter;
-            secretWord
-              .querySelectorAll('div')
-              [index].classList.add('secret-word__letter_guessed');
-          }
-        });
-      } else {
-        incorrect += 1;
-        taskPartCount.innerHTML = ` ${incorrect} / 6`;
-        // appear parts of person when incorrect answer in the logical order (head, body, left arm, right arm, left leg, right leg)
-        gallowsPartPersonImg.src = `./assets/hangman-${incorrect}.svg`;
+      if (e.target !== e.currentTarget) {
+        if (word.includes(clickedLetter)) {
+          [...word].forEach((letter, index) => {
+            if (letter === clickedLetter) {
+              // printed guessed lettes
+              secretWord.querySelectorAll('div')[index].innerHTML =
+                clickedLetter;
+              secretWord
+                .querySelectorAll('div')
+                [index].classList.add('secret-word__letter_guessed');
+              guessedLetters += 1;
+            }
+          });
+        } else {
+          incorrect += 1;
+          taskPartCount.innerHTML = ` ${incorrect} / 6`;
+          // appear parts of person when incorrect answer in the logical order (head, body, left arm, right arm, left leg, right leg)
+          gallowsPartPersonImg.src = `./assets/hangman-${incorrect}.svg`;
+        }
+        e.target.classList.add('keyboard__character_clicked');
+        // The clicked/pressed letter is disabled
+        //     e.target.setAttribute('disabled', 'disabled');
+        if (guessedLetters === word.length) {
+          createModal(true, word);
+        }
+        if (incorrect === 6) {
+          createModal(false, word);
+        }
+        console.log(e.target);
       }
-      e.target.classList.add('keyboard__character_clicked');
-      // The clicked/pressed letter is disabled
-      e.target.setAttribute("disabled", "disabled");
     });
   }
 
