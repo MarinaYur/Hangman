@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function checkEnteredLetter(word) {
     keyboard.addEventListener('click', (e) => {
+      console.log(e.currentTarget);
       const clickedLetter = e.target.innerHTML;
       if (word.includes(clickedLetter)) {
         [...word].forEach((letter, index) => {
@@ -83,11 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         incorrect += 1;
         taskPartCount.innerHTML = ` ${incorrect} / 6`;
-        // appear parts of person when incorrect answer
+        // appear parts of person when incorrect answer in the logical order (head, body, left arm, right arm, left leg, right leg)
         gallowsPartPersonImg.src = `./assets/hangman-${incorrect}.svg`;
       }
       e.target.classList.add('keyboard__character_clicked');
-      console.log(e.target);
+      // The clicked/pressed letter is disabled
+      e.target.setAttribute("disabled", "disabled");
     });
   }
 
