@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const modalSecretWord = document.createElement('p');
   const modalButton = document.createElement('button');
 
-  modal.classList = 'modal';
   overlay.classList = 'overlay';
   modalHeader.classList = 'modal__header';
   modalSecretWord.classList = 'modal__secret-word';
@@ -160,9 +159,12 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.append(modalButton);
 
     if (resultOfGame) {
+      modal.classList = 'modal_win';
       modalHeader.innerHTML = 'You won!';
       modalSecretWord.innerHTML = `You guessed the secret word: ${guestsWord}!`;
+
     } else {
+      modal.classList = 'modal_lost';
       modalHeader.innerHTML = 'Uhh, you lost.';
       modalSecretWord.innerHTML = `Secret word was ${guestsWord}!`;
     }

@@ -1,6 +1,9 @@
 @import "../base/normalize";
 @import "../base/base";
 
+@import "../abstracts/placeholders";
+@import "../abstracts/mixins";
+
 @import "../components/secret-word";
 
 @import "../layout/main";

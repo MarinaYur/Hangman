@@ -1,0 +1,6 @@
+@mixin media-tablet {
+  @media screen and (max-width: 840px) and (min-width: 631px) {@content};
+}
+@mixin media {
+  @media screen and (max-width: 630px) {@content};
+}
