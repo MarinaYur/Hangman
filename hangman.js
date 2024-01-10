@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       word: 'mercury',
-      clue: 'the smallest planet in the solar system?' },
+      clue: 'the smallest planet in the solar system?',
+    },
     {
       word: 'calibri',
       clue: 'The smallest birds in the world?',
@@ -149,6 +150,14 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.classList.remove('keyboard__character_clicked');
       btn.removeAttribute('disabled');
     });
+    document.addEventListener('keydown', checkEnteredLetter);
+  }
+
+  function b(e) {
+    console.log('key.code', e.code);
+    if (e.code === 'Enter') {
+      createSecretWord(e);
+    }
   }
 
   function createModal(resultOfGame, word) {
@@ -158,22 +167,29 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.append(modalHeader);
     modal.append(modalSecretWord);
     modal.append(modalButton);
+    document.body.style.overflow = 'hidden';
 
     if (resultOfGame) {
       modal.classList = 'modal_win';
       modalHeader.innerHTML = 'You won!';
       modalSecretWord.innerHTML = `You guessed the secret word: ${guestsWord}!`;
-
     } else {
       modal.classList = 'modal_lost';
       modalHeader.innerHTML = 'Uhh, you lost.';
       modalSecretWord.innerHTML = `Secret word was ${guestsWord}!`;
     }
+    document.addEventListener('keydown', b);
   }
 
   function checkEnteredLetter(e) {
+    // console.log('e.code, e.key', e.code, e.key);
     const word = wordSecret;
-    const clickedLetter = e.target.innerHTML;
+    let clickedLetter = '';
+    if (e.key) {
+      clickedLetter = e.key;
+    } else {
+      clickedLetter = e.target.innerHTML;
+    }
     if (e.target !== e.currentTarget) {
       if (word.includes(clickedLetter)) {
         [...word].forEach((letter, index) => {
@@ -200,17 +216,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (incorrect === 6) {
         createModal(false, word);
+        document.removeEventListener('keydown', checkEnteredLetter);
       }
     }
   }
 
-  function addListenerOnKeyboardButtons() {
+  function addListenerOnVirtualKeyboardButtons() {
     resetGame();
     keyboard.addEventListener('click', checkEnteredLetter);
   }
-  keyboard.removeEventListener('click', checkEnteredLetter);
 
   function createSecretWord() {
+    document.removeEventListener('keydown', b);
+    document.body.style.overflow = '';
     secretWord.innerHTML = '';
     const { word, clue } =
       questionsArr[Math.floor(Math.random() * questionsArr.length)];
@@ -223,9 +241,12 @@ document.addEventListener('DOMContentLoaded', function () {
       letter.className = 'secret-word__letter';
       secretWord.append(letter);
     }
-    addListenerOnKeyboardButtons(word);
+    addListenerOnVirtualKeyboardButtons(word);
   }
   modalButton.addEventListener('click', createSecretWord);
+
+  document.addEventListener('keydown', checkEnteredLetter);
+
   // const questionsObjRu = [
 
   //   Юпитер: 'Самая большая планета Солнечной системы?',
