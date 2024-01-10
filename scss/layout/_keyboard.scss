@@ -16,10 +16,10 @@
   background-color: cadetblue;
   text-transform: uppercase;
   cursor: pointer;
-  @include media-tablet {
-    max-width: 30px;
-    min-height: 25px;
-  }
+  // @include media-tablet {
+  //   max-width: 30px;
+  //   min-height: 25px;
+  // }
   @include media {
     max-width: 30px;
     min-height: 25px;

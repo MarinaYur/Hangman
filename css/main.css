@@ -467,12 +467,6 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
-@media screen and (max-width: 840px) and (min-width: 631px) {
-  .keyboard__character {
-    max-width: 30px;
-    min-height: 25px;
-  }
-}
 @media screen and (max-width: 630px) {
   .keyboard__character {
     max-width: 30px;
