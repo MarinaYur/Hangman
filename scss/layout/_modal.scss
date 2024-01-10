@@ -1,5 +1,4 @@
 .overlay {
-  // display: none;
   position: fixed;
   z-index: 25;
   display: flex;
@@ -7,46 +6,32 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-
   background-color: #403f3dcc;
 }
-
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 29px;
+  border-radius: 25px;
+  border: 4px solid rgb(135, 211, 212);
+  background-size: cover;
+  background-position-x: center;
+  gap: 35px
+}
 .modal_win {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 29px;
-  border-radius: 25px;
-  border: 4px solid rgb(135, 211, 212);
-  background-image: url(./../assets/sunburst-background.avif);
-  background-size: cover;
-  background-position-x: center;
-  gap: 35px
+  background-image: url(../assets/sunburst-background.avif);
 }
-
-.modal_lost {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 29px;
-  border-radius: 25px;
-  border: 4px solid rgb(135, 211, 212);
-  background-image: url(/assets/gray-glow-shiny.avif);
-  background-size: cover;
-  background-position-x: center;
-  gap: 35px
+.modal_lose {
+  background-image: url(../assets/gray-glow-shiny.avif);
 }
-
 .modal__header {
   display: flex;
   justify-content: center;
   width: 200px;
 }
-
 .modal__secret-word {
   text-align: center;
   font-size: 18px;
@@ -54,7 +39,6 @@
   display: flex;
   justify-content: center;
 }
-
 .modal__button {
   padding: 5px;
   border-radius: 5px;

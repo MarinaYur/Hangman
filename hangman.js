@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const questionsArr = [
     {
       word: 'jupiter',
@@ -153,8 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', checkEnteredLetter);
   }
 
-  function b(e) {
-    console.log('key.code', e.code);
+  function closeModalByEnter(e) {
     if (e.code === 'Enter') {
       createSecretWord(e);
     }
@@ -170,15 +169,15 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
 
     if (resultOfGame) {
-      modal.classList = 'modal_win';
+      modal.classList = 'modal_win modal';
       modalHeader.innerHTML = 'You won!';
       modalSecretWord.innerHTML = `You guessed the secret word: ${guestsWord}!`;
     } else {
-      modal.classList = 'modal_lost';
-      modalHeader.innerHTML = 'Uhh, you lost.';
+      modal.classList = 'modal_lose modal';
+      modalHeader.innerHTML = 'Uhh, you lose.';
       modalSecretWord.innerHTML = `Secret word was ${guestsWord}!`;
     }
-    document.addEventListener('keydown', b);
+    document.addEventListener('keydown', closeModalByEnter);
   }
 
   function checkEnteredLetter(e) {
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createSecretWord() {
-    document.removeEventListener('keydown', b);
+    document.removeEventListener('keydown', closeModalByEnter);
     document.body.style.overflow = '';
     secretWord.innerHTML = '';
     const { word, clue } =
@@ -247,14 +246,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('keydown', checkEnteredLetter);
 
-  // const questionsObjRu = [
-
-  //   Юпитер: 'Самая большая планета Солнечной системы?',
-  //   Меркурий: 'Наименьшая планета Солнечной системы',
-  //   Калибри: 'Самые маленькие птицы в мире',
-  //   гепард: 'Самый быстрый бегун среди наземных животных',
-  //   клумба: 'Как называется участок земли, засаженный цветами?',
-  // ]
-  // ;
   createSecretWord();
 });

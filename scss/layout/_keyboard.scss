@@ -13,13 +13,10 @@
   min-height: 30px;
   border-radius: 0 8px;
   color: white;
+  text-align: center;
   background-color: cadetblue;
   text-transform: uppercase;
   cursor: pointer;
-  // @include media-tablet {
-  //   max-width: 30px;
-  //   min-height: 25px;
-  // }
   @include media {
     max-width: 30px;
     min-height: 25px;

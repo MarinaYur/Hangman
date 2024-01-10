@@ -342,6 +342,7 @@ body {
 }
 
 .secret-word__letter_guessed {
+  text-align: center;
   border-bottom: 0px;
 }
 
@@ -463,6 +464,7 @@ body {
   min-height: 30px;
   border-radius: 0 8px;
   color: white;
+  text-align: center;
   background-color: cadetblue;
   text-transform: uppercase;
   cursor: pointer;
@@ -500,7 +502,7 @@ body {
   background-color: rgba(64, 63, 61, 0.8);
 }
 
-.modal_win {
+.modal {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -509,25 +511,17 @@ body {
   padding: 29px;
   border-radius: 25px;
   border: 4px solid rgb(135, 211, 212);
-  background-image: url(./../assets/sunburst-background.avif);
   background-size: cover;
   background-position-x: center;
   gap: 35px;
 }
 
-.modal_lost {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 29px;
-  border-radius: 25px;
-  border: 4px solid rgb(135, 211, 212);
-  background-image: url(/assets/gray-glow-shiny.avif);
-  background-size: cover;
-  background-position-x: center;
-  gap: 35px;
+.modal_win {
+  background-image: url(../assets/sunburst-background.avif);
+}
+
+.modal_lose {
+  background-image: url(../assets/gray-glow-shiny.avif);
 }
 
 .modal__header {

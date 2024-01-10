@@ -26,6 +26,15 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'no-use-before-define': [
+      'error',
+      {
+        functions: false,
+        classes: true,
+        variables: true,
+        allowNamedExports: false,
+      },
+    ],
   },
   plugins: ['prettier'],
 };
