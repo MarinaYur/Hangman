@@ -453,7 +453,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   z-index: 12;
 }
 
@@ -486,7 +486,6 @@ body {
 
 .keyboard__character_clicked {
   background-color: rgba(159, 196, 197, 0.8);
-  pointer-events: none;
   cursor: default;
 }
 

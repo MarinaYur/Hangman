@@ -145,9 +145,10 @@ document.addEventListener('DOMContentLoaded', function () {
     modalHeader.remove();
     modalSecretWord.remove();
     modalButton.remove();
-    keyboard
-      .querySelectorAll('button')
-      .forEach((btn) => btn.classList.remove('keyboard__character_clicked'));
+    keyboard.querySelectorAll('button').forEach((btn) => {
+      btn.classList.remove('keyboard__character_clicked');
+      btn.removeAttribute('disabled');
+    });
   }
 
   function createModal(resultOfGame, word) {
@@ -193,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       e.target.classList.add('keyboard__character_clicked');
       // The clicked/pressed letter is disabled
-      //     e.target.setAttribute('disabled', 'disabled');
+      e.target.setAttribute('disabled', 'disabled');
       if (guessedLetters === word.length) {
         createModal(true, word);
       }
@@ -234,7 +235,5 @@ document.addEventListener('DOMContentLoaded', function () {
   //   клумба: 'Как называется участок земли, засаженный цветами?',
   // ]
   // ;
-  // createGameEnvironment();
-  // createKeyboard();
   createSecretWord();
 });
