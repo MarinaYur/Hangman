@@ -1,0 +1,64 @@
+.button {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 64px;
+    border-radius: 100px;
+    border: 0px;
+}
+
+.button__colored {
+    background-color: $color-light;
+}
+
+.button_bordered {
+    border: 1px solid $color-backgroundFooter;
+    background-color: $color-background;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 37px;
+    transition: 0.5s linear;
+
+    img {
+        display: block;
+    }
+
+    span {
+        color: $color-dark;
+        @include font (1.0rem, 150%, 600, normal);
+
+    }
+
+    p {
+        @include font (1.6rem, 150%, 600, normal);
+    }
+
+    div {
+        padding: 4px 0px 0 9px;
+        margin-bottom: 9px;
+    }
+
+    @media (hover:hover) {
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-backgroundFooter;
+
+            span,
+            p {
+                color: $color-light;
+            }
+
+            svg {
+                color: $color-light;
+            }
+
+        }
+    }
+}
+
+.button_gplay {
+    padding-right: 24px;
+}

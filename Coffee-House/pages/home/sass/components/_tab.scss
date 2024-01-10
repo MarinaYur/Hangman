@@ -1,0 +1,58 @@
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 8px;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid var(--border-light, #C1B6AD);
+    
+    transition: 0.5s linear;
+
+    @media (hover:hover) {
+        // cursor: pointer;
+        &:hover {
+        background-color: $color-backgroundFooter;
+
+        .tabIcon {
+            background-color: $color-light;
+        }
+
+        .tabName {
+            color: $color-light;
+        }
+    }
+}
+    
+}
+
+.tabName {
+    @include font (1.6rem, 150%, 600, normal);
+    color: #403F3D;
+}
+
+.tabName_active {
+    color: $color-light;
+}
+
+.tabIcon {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    background-color: $color-indiсator;
+}
+
+.tabIcon_active {
+    background-color: $color-light;
+}
+
+.tab_active {
+    cursor: default;
+    background-color: $color-backgroundFooter;
+    span {
+        color: $color-light;
+    }
+}

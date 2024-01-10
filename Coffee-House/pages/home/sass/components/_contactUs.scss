@@ -1,0 +1,40 @@
+.contactUs {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 17fr;
+    padding-top: 39px;
+    span {
+        padding-bottom: 17px;
+    }
+
+    a {
+        color: $color-light;
+        margin: 0;
+        text-decoration: none;
+        padding-bottom: 8px;
+    }
+
+    img {
+        padding-right: 4px;
+    }
+    :first-child {
+    img {
+        padding-right: 8px;
+    }
+}
+
+:nth-child(2) {
+        img {
+            padding-right: 5px;
+        }
+    }
+    @include media-tablet {
+        padding-top: 3.7rem;
+    }
+    @include media-mobile {
+        padding-top: 37px;
+    }
+    @include media-mobile1 {
+        padding-top: 37px;
+    }
+}
