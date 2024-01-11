@@ -484,6 +484,10 @@ body {
   cursor: default;
 }
 
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+  visibility: visible;
+}
+
 .main-task__wrapper {
   display: flex;
   flex-direction: column;

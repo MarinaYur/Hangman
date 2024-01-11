@@ -32,3 +32,6 @@
   // pointer-events: none;
   cursor: default;
 }
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+  visibility: visible;
+}
