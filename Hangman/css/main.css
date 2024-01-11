@@ -475,13 +475,12 @@ body {
   }
 }
 
-.keyboard__character:hover {
+.keyboard__character:not([disabled]):hover {
   background-color: rgb(135, 211, 212);
 }
 
 .keyboard__character_clicked {
   background-color: rgba(159, 196, 197, 0.8);
-  pointer-events: none;
   cursor: default;
 }
 
