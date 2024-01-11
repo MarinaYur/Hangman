@@ -481,6 +481,7 @@ body {
 
 .keyboard__character_clicked {
   background-color: rgba(159, 196, 197, 0.8);
+  pointer-events: none;
   cursor: default;
 }
 
