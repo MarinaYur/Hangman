@@ -520,6 +520,7 @@ body {
 }
 
 .modal_win {
+  margin: 0 15px;
   background-image: url(../assets/sunburst-background.avif);
 }
 
