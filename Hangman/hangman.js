@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let incorrect;
   let guessedLetters;
   let wordSecret = '';
+  let clickedLetterArr = [];
   const main = document.createElement('main');
   const gallowsPart = document.createElement('div');
   const img = document.createElement('img');
@@ -139,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetGame() {
     incorrect = 0;
     guessedLetters = 0;
+    clickedLetterArr = [];
     gallowsPartPersonImg.src = '';
     taskPartCount.innerHTML = ` ${incorrect} / 6`;
     overlay.remove();
@@ -180,15 +182,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', closeModalByEnter);
   }
 
+
   function checkEnteredLetter(e) {
-    // console.log('e.code, e.key', e.code, e.key);
+    if (clickedLetterArr.includes(e.key)) {
+      return;
+    }
     const word = wordSecret;
     let clickedLetter = '';
     if (e.key) {
       clickedLetter = e.key;
+      const buttons = keyboard.querySelectorAll('button');
+       buttons.forEach((button, index) => {
+       if (e.key === button.innerHTML) {
+        // The clicked/pressed letter is disabled
+        button.setAttribute('disabled', 'disabled');
+        button.classList.add('keyboard__character_clicked');
+       }
+      }
+       );
     } else {
       clickedLetter = e.target.innerHTML;
     }
+    clickedLetterArr.push(clickedLetter);
     if (e.target !== e.currentTarget) {
       if (word.includes(clickedLetter)) {
         [...word].forEach((letter, index) => {
@@ -214,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         createModal(true, word);
       }
       if (incorrect === 6) {
+        lockedLetter = true;
         createModal(false, word);
         document.removeEventListener('keydown', checkEnteredLetter);
       }
