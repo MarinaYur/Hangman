@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gallowsPartName.innerHTML = 'Hangman game';
   taskPartCount.innerHTML = ` ${incorrect} / 6`;
+  alert('Please use only latin characters');
 
   // modal
   const overlay = document.createElement('div');
