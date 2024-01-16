@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // create Game Environment, createMainElements
+  let previousWord = '';
   const { body } = document;
   let incorrect;
   let guessedLetters;
@@ -248,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
     secretWord.innerHTML = '';
     const { word, clue } =
       questionsArr[Math.floor(Math.random() * questionsArr.length)];
+    if (word === previousWord) return createSecretWord();
+    previousWord = word;
     taskPartHint.innerHTML = `Hint: ${clue}`;
     taskPartP.innerHTML = 'Incorrect quesses:';
     wordSecret = word;
