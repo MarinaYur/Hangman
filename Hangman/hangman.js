@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // create Game Environment, createMainElements
+  let keyboardLettersArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   let previousWord = '';
   const { body } = document;
   let incorrect;
@@ -192,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const word = wordSecret;
     let clickedLetter = '';
     if (e.key) {
+      if (!keyboardLettersArr.includes(e.key.toUpperCase())) return;
       clickedLetter = e.key;
       const buttons = keyboard.querySelectorAll('button');
        buttons.forEach((button, index) => {
@@ -229,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.setAttribute('disabled', 'disabled');
       if (guessedLetters === word.length) {
         createModal(true, word);
+        document.removeEventListener('keydown', checkEnteredLetter);
       }
       if (incorrect === 6) {
         lockedLetter = true;
