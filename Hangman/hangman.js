@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const taskPartP = document.createElement('p');
   const taskPartCount = document.createElement('span');
   const keyboard = document.createElement('div');
+  const footnote = document.createElement('p');
 
   main.className = 'main';
   img.className = 'galows-part__gallows';
@@ -93,11 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
   taskPartCount.className = 'task-part__count';
   gallowsPart.className = 'gallows-part';
   keyboard.className = 'keyboard';
+  footnote.className = 'footnote';
 
   img.alt = 'gallows';
   img.src = './assets/gallows.svg';
 
   body.append(main);
+
   gallowsPart.append(img);
   gallowsPart.append(gallowsPartPerson);
   gallowsPartPerson.append(gallowsPartPersonImg);
@@ -106,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
   main.append(taskPart);
   main.prepend(gallowsPart);
 
+
   taskPart.append(mainTaskWrapper);
+  taskPart.append(footnote);
   mainTaskWrapper.append(secretWord);
   mainTaskWrapper.append(taskPartHintCount);
   mainTaskWrapper.append(keyboard);
@@ -116,7 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gallowsPartName.innerHTML = 'Hangman game';
   taskPartCount.innerHTML = ` ${incorrect} / 6`;
-  alert('Please use only latin characters');
+  footnote.innerHTML = '&#8251;Please use only latin characters';
+  // alert('Please use only latin characters');
 
   // modal
   const overlay = document.createElement('div');
